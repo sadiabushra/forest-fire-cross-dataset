@@ -1,0 +1,7 @@
+03_datasets/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+kaggle.json

@@ -1,2 +1,5 @@
 numpy==2.5.3
 pillow==12.3.0
+torch>=2.14
+torchvision
+scikit-learn

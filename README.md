@@ -3,8 +3,8 @@
 Code for a master's thesis on how well deep-learning models for fire and smoke
 classification generalize across independently collected image datasets.
 
-This repository currently contains the **data audit and split pipeline**. Model
-training code will be added later.
+This repository contains the **data audit and split pipeline** (steps 1-4, CPU)
+and the **baseline training** scripts (step 5, GPU).
 
 ## Pipeline
 
@@ -17,8 +17,11 @@ training code will be added later.
 | 3b | `make_splits_within.py` | Cluster-aware 70/15/15 train/val/test split per dataset |
 | 3c | `make_cross_dataset_folds.py` | Reference-to-Shift and leave-one-dataset-out folds, leakage removed |
 | 4 | `make_upload_copy.py` | Resized copy (short side 256 px) and split files for GPU training |
+| 5 | `train.py` | Trains and tests one ImageNet-pretrained classifier (ResNet-50, MobileNetV2, EfficientNet-B3; frozen or fine-tuned) |
+| 5b | `run_baselines.py` | Runs all baseline trainings in priority groups and writes `summary.csv` |
 
-All scripts are in `04_experiments/src/` and run on a CPU.
+All scripts are in `04_experiments/src/`. Steps 1-4 run on a CPU; step 5 needs a GPU
+(`train.py --quick` is a small CPU test).
 
 ## Data
 
@@ -50,3 +53,13 @@ python 04_experiments/src/make_splits_within.py
 python 04_experiments/src/make_cross_dataset_folds.py
 python 04_experiments/src/make_upload_copy.py
 ```
+
+Training (GPU), on the unzipped upload folder made by step 4:
+
+```
+python 04_experiments/src/train.py --data UPLOAD_FOLDER --dataset R1 --quick   # CPU smoke test
+python 04_experiments/src/run_baselines.py --data UPLOAD_FOLDER --group 1      # ResNet-50 baselines
+python 04_experiments/src/run_baselines.py --data UPLOAD_FOLDER --group 1 2    # all models
+```
+
+The prepared data (`upload.zip`, 3.9 GB) is too large for GitHub and is shared separately.

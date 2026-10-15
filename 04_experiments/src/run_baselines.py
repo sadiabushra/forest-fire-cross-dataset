@@ -6,6 +6,7 @@ collects all test scores into summary.csv.
 
 Usage:
     python 04_experiments/src/run_baselines.py --data UPLOAD_FOLDER [--group 1 2]
+        [--setups within ref_to_shift lodo]
         [--dry-run] [--summary-only]
 """
 
@@ -38,6 +39,9 @@ def read_options():
     parser.add_argument("--data", required=True, help="the unzipped upload folder")
     parser.add_argument("--out", default="results", help="folder for the run folders and summary.csv")
     parser.add_argument("--group", type=int, nargs="+", default=[1], choices=sorted(GROUP_MODELS))
+    parser.add_argument("--setups", nargs="+", default=["within", "ref_to_shift", "lodo"],
+                        choices=["within", "ref_to_shift", "lodo"],
+                        help="which kinds of setup to run (to split the work into parts)")
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--workers", type=int, default=8)
@@ -47,14 +51,25 @@ def read_options():
     return parser.parse_args()
 
 
+def make_setups(kinds):
+    """The train.py options for each setup of the chosen kinds (within / ref_to_shift / lodo)."""
+    setups = []
+    if "within" in kinds:
+        setups += [["--dataset", d] for d in WITHIN_DATASETS]
+    for fold_file in FOLD_FILES:
+        kind = "ref_to_shift" if fold_file.startswith("ref_to_shift") else "lodo"
+        if kind in kinds:
+            setups.append(["--split-file", fold_file])
+    return setups
+
+
 def make_run_list(options):
     """Each run is a list of command-line options for train.py."""
     runs = []
     for group in options.group:
         for model in GROUP_MODELS[group]:
             for freeze in (True, False):
-                setups = [["--dataset", d] for d in WITHIN_DATASETS]
-                setups += [["--split-file", f] for f in FOLD_FILES]
+                setups = make_setups(options.setups)
                 for setup in setups:
                     args = setup + ["--model", model]
                     if freeze:
@@ -147,7 +162,7 @@ def main():
             for number, run_args in enumerate(runs, 1):
                 print(f"{number:2d}. {folder_of(run_args, options).name}")
             return
-        log(f"Starting {len(runs)} runs (groups {options.group})")
+        log(f"Starting {len(runs)} runs (groups {options.group}, setups {options.setups})")
         run_all(runs, options, log)
 
     summary_path, n = write_summary(options.out)

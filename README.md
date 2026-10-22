@@ -18,7 +18,7 @@ and the **baseline training** scripts (step 5, GPU).
 | 3c | `make_cross_dataset_folds.py` | Reference-to-Shift and leave-one-dataset-out folds, leakage removed |
 | 4 | `make_upload_copy.py` | Resized copy (short side 256 px) and split files for GPU training |
 | 5 | `train_tf.py` | Keras/TensorFlow: trains one ImageNet-pretrained classifier (ResNet-50, MobileNetV2, EfficientNet-B3, DenseNet-121, ViT-B/16; frozen or fine-tuned) and tests it within-dataset and on every other dataset |
-| 5b | `run_task1_tf.py` | All 40 baseline runs (5 models x 4 training datasets x frozen/fine-tuned) and `all_scores.csv` |
+| 5b | `run_piece1.py` | Piece 1 of the GPU runs: ResNet-50 on R1, frozen and fine-tuned, and `piece1_scores.csv` |
 
 All scripts are in `04_experiments/src/`. Steps 1-4 run on a CPU; step 5 needs a GPU
 (`train_tf.py --quick` is a small CPU test).
@@ -58,8 +58,8 @@ Training (GPU, Keras + TensorFlow), on the unzipped upload folder made by step 4
 
 ```
 pip install -r 04_experiments/requirements_tf.txt
-python 04_experiments/src/run_task1_tf.py --data UPLOAD_FOLDER --quick --out results_check   # quick check
-python 04_experiments/src/run_task1_tf.py --data UPLOAD_FOLDER --out results_tf              # all 40 runs
+python 04_experiments/src/run_piece1.py --data UPLOAD_FOLDER --quick --out results_check   # quick check
+python 04_experiments/src/run_piece1.py --data UPLOAD_FOLDER --out results_tf              # piece 1
 ```
 
 The prepared data (`upload.zip`, 3.9 GB) is too large for GitHub and is shared separately.

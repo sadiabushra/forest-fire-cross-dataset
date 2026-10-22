@@ -1,0 +1,14 @@
+# Keras + TensorFlow environment for train_tf.py and run_task1_tf.py
+# Tested on 22 Oct 2026 with Python 3.12, tensorflow 2.21.0, keras 3.15.1, keras-hub 0.32.0 (CPU).
+#
+# Linux GPU machine (pip brings its own CUDA libraries):
+#     python -m venv venv_fire && source venv_fire/bin/activate
+#     pip install -r 04_experiments/requirements_tf.txt
+# If TensorFlow + Keras 3 is already installed, only keras-hub and scikit-learn are missing:
+#     pip install keras-hub scikit-learn
+tensorflow[and-cuda]>=2.16; sys_platform == "linux"
+tensorflow>=2.16; sys_platform != "linux"
+keras>=3.0
+keras-hub>=0.20
+scikit-learn
+numpy

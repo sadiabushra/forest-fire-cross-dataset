@@ -1,0 +1,33 @@
+{
+  "data": "/content/upload",
+  "dataset": "R1",
+  "model": "resnet50",
+  "freeze": true,
+  "epochs": 10,
+  "batch_size": 64,
+  "lr": 0.001,
+  "image_size": 224,
+  "seed": 42,
+  "out": "/content/drive/MyDrive/thesis_results_tf",
+  "no_save": false,
+  "no_mixed_precision": false,
+  "quick": false,
+  "device": "GPU (Tesla T4)",
+  "mixed_precision": true,
+  "tensorflow": "2.21.0",
+  "keras": "3.13.2",
+  "images": {
+    "train": 2914,
+    "val": 625
+  },
+  "test_images": {
+    "R1": 625,
+    "R2": 14275,
+    "R3": 3760,
+    "R4": 3230,
+    "S1": 225,
+    "S2": 399,
+    "S3": 1633,
+    "ALT_WILDFIRE": 2691
+  }
+}

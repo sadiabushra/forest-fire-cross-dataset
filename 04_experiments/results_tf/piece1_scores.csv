@@ -1,0 +1,17 @@
+run,model,mode,train_dataset,test_dataset,kind,best_epoch,train_minutes,ms_per_image,weights,images,fire_images,accuracy,balanced_accuracy,macro_f1,precision,recall,f1,specificity,auc,true_negatives,false_positives,false_negatives,true_positives
+within_R1_resnet50_frozen_seed42,resnet50,frozen,R1,R1,within,10,2.11,2.853,23591810,625,314,0.9824,0.9824,0.9824,0.981,0.9841,0.9825,0.9807,0.9989,305,6,5,309
+within_R1_resnet50_frozen_seed42,resnet50,frozen,R1,R2,cross,10,2.11,2.853,23591810,14275,8407,0.6958,0.7255,0.6953,0.8815,0.5585,0.6838,0.8925,0.8245,5237,631,3712,4695
+within_R1_resnet50_frozen_seed42,resnet50,frozen,R1,R3,cross,10,2.11,2.853,23591810,3760,1965,0.7859,0.7952,0.7796,1.0,0.5903,0.7424,1.0,0.8121,1795,0,805,1160
+within_R1_resnet50_frozen_seed42,resnet50,frozen,R1,R4,cross,10,2.11,2.853,23591810,3230,1754,0.6446,0.6685,0.6264,0.8966,0.3905,0.5441,0.9465,0.5848,1397,79,1069,685
+within_R1_resnet50_frozen_seed42,resnet50,frozen,R1,S1,cross,10,2.11,2.853,23591810,225,118,0.8,0.7958,0.7969,0.7704,0.8814,0.8221,0.7103,0.8977,76,31,14,104
+within_R1_resnet50_frozen_seed42,resnet50,frozen,R1,S2,cross,10,2.11,2.853,23591810,399,157,0.6416,0.5446,0.4678,1.0,0.0892,0.1637,1.0,0.685,242,0,143,14
+within_R1_resnet50_frozen_seed42,resnet50,frozen,R1,S3,cross,10,2.11,2.853,23591810,1633,1145,0.4152,0.5694,0.4009,0.9025,0.186,0.3085,0.9529,0.8453,465,23,932,213
+within_R1_resnet50_frozen_seed42,resnet50,frozen,R1,ALT_WILDFIRE,cross,10,2.11,2.853,23591810,2691,1040,0.7941,0.7538,0.7656,0.8413,0.576,0.6838,0.9316,0.8654,1538,113,441,599
+within_R1_resnet50_finetuned_seed42,resnet50,finetuned,R1,R1,within,3,4.62,2.864,23591810,625,314,0.9792,0.9791,0.9792,0.9602,1.0,0.9797,0.9582,0.9987,298,13,0,314
+within_R1_resnet50_finetuned_seed42,resnet50,finetuned,R1,R2,cross,3,4.62,2.864,23591810,14275,8407,0.6502,0.6385,0.6386,0.7025,0.7044,0.7035,0.5726,0.7351,3360,2508,2485,5922
+within_R1_resnet50_finetuned_seed42,resnet50,finetuned,R1,R3,cross,3,4.62,2.864,23591810,3760,1965,0.804,0.8115,0.8006,0.9701,0.6448,0.7747,0.9783,0.8411,1756,39,698,1267
+within_R1_resnet50_finetuned_seed42,resnet50,finetuned,R1,R4,cross,3,4.62,2.864,23591810,3230,1754,0.5969,0.6053,0.5961,0.6702,0.5074,0.5775,0.7033,0.6393,1038,438,864,890
+within_R1_resnet50_finetuned_seed42,resnet50,finetuned,R1,S1,cross,3,4.62,2.864,23591810,225,118,0.6933,0.678,0.6514,0.6324,0.9915,0.7723,0.3645,0.9069,39,68,1,117
+within_R1_resnet50_finetuned_seed42,resnet50,finetuned,R1,S2,cross,3,4.62,2.864,23591810,399,157,0.6792,0.5991,0.5701,0.8537,0.2229,0.3535,0.9752,0.677,236,6,122,35
+within_R1_resnet50_finetuned_seed42,resnet50,finetuned,R1,S3,cross,3,4.62,2.864,23591810,1633,1145,0.7018,0.7391,0.6888,0.9002,0.6463,0.7524,0.832,0.8255,406,82,405,740
+within_R1_resnet50_finetuned_seed42,resnet50,finetuned,R1,ALT_WILDFIRE,cross,3,4.62,2.864,23591810,2691,1040,0.7856,0.7829,0.7776,0.7029,0.7712,0.7354,0.7947,0.8563,1312,339,238,802

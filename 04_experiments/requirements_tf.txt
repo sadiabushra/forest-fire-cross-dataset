@@ -6,6 +6,13 @@
 #     pip install -r 04_experiments/requirements_tf.txt
 # If TensorFlow + Keras 3 is already installed, only keras-hub and scikit-learn are missing:
 #     pip install keras-hub scikit-learn
+#
+# Ayan's GPU machine (venv tf_gpu, Python 3.10, tensorflow[and-cuda]==2.16.2, numpy<2, scikit-learn<1.6):
+# it already has everything except keras-hub (only needed for vit_b16). Pin it, otherwise pip may
+# pull a newer tensorflow-text and upgrade TensorFlow:
+#     pip install "tensorflow[and-cuda]==2.16.2" keras-hub==0.25.1 tensorflow-text==2.16.1
+# Tested 28 Oct 2026 with Python 3.10, tensorflow 2.16.2, keras 3.12.4, keras-hub 0.25.1, numpy 1.26.4,
+# scikit-learn 1.5.2 (CPU, --quick, resnet50 + vit_b16).
 tensorflow[and-cuda]>=2.16; sys_platform == "linux"
 tensorflow>=2.16; sys_platform != "linux"
 keras>=3.0

@@ -5,3 +5,6 @@ __pycache__/
 venv/
 .env
 kaggle.json
+
+# Model weights (~90 MB each) stay on Google Drive
+*.h5

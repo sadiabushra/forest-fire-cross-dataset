@@ -8,7 +8,7 @@
   "lr": 0.001,
   "image_size": 224,
   "seed": 42,
-  "out": "/content/drive/MyDrive/thesis_results_tf",
+  "out": "/content/results_tf",
   "no_save": false,
   "no_mixed_precision": false,
   "quick": false,

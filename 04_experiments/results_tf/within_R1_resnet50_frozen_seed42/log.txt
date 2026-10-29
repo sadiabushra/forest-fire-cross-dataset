@@ -3,25 +3,25 @@ Run within_R1_resnet50_frozen_seed42 on GPU (Tesla T4), TensorFlow 2.21.0, Keras
   val: 625 images, 314 fire_or_smoke, 311 none
   test sets: R1 625, R2 14275, R3 3760, R4 3230, S1 225, S2 399, S3 1633, ALT_WILDFIRE 2691
   model resnet50: 23,591,810 weights, 4,098 of them learn
-  epoch 1/10: loss 0.2271, val acc 0.9776, val macro-F1 0.9776, 0.9 min
-  epoch 2/10: loss 0.0763, val acc 0.9712, val macro-F1 0.9712, 0.1 min
-  epoch 3/10: loss 0.0607, val acc 0.9712, val macro-F1 0.9712, 0.1 min
-  epoch 4/10: loss 0.0515, val acc 0.9776, val macro-F1 0.9776, 0.1 min
-  epoch 5/10: loss 0.0487, val acc 0.9792, val macro-F1 0.9792, 0.1 min
-  epoch 6/10: loss 0.0404, val acc 0.9792, val macro-F1 0.9792, 0.1 min
-  epoch 7/10: loss 0.0409, val acc 0.9760, val macro-F1 0.9760, 0.2 min
-  epoch 8/10: loss 0.0374, val acc 0.9760, val macro-F1 0.9760, 0.1 min
-  epoch 9/10: loss 0.0345, val acc 0.9776, val macro-F1 0.9776, 0.1 min
-  epoch 10/10: loss 0.0344, val acc 0.9808, val macro-F1 0.9808, 0.1 min
-  best epoch 10 (val macro-F1 0.9808); testing it
+  epoch 1/10: loss 0.2209, val acc 0.9776, val macro-F1 0.9776, 1.0 min
+  epoch 2/10: loss 0.0759, val acc 0.9776, val macro-F1 0.9776, 0.2 min
+  epoch 3/10: loss 0.0584, val acc 0.9760, val macro-F1 0.9760, 0.2 min
+  epoch 4/10: loss 0.0528, val acc 0.9792, val macro-F1 0.9792, 0.2 min
+  epoch 5/10: loss 0.0454, val acc 0.9792, val macro-F1 0.9792, 0.1 min
+  epoch 6/10: loss 0.0430, val acc 0.9760, val macro-F1 0.9760, 0.1 min
+  epoch 7/10: loss 0.0400, val acc 0.9760, val macro-F1 0.9760, 0.1 min
+  epoch 8/10: loss 0.0370, val acc 0.9760, val macro-F1 0.9760, 0.1 min
+  epoch 9/10: loss 0.0349, val acc 0.9728, val macro-F1 0.9728, 0.2 min
+  epoch 10/10: loss 0.0300, val acc 0.9760, val macro-F1 0.9760, 0.1 min
+  best epoch 4 (val macro-F1 0.9792); testing it
 TEST (first line = own test set, the others = cross-dataset):
-  R1               625 images: acc 0.9824, macro-F1 0.9824, bal. acc 0.9824, precision 0.9810, recall 0.9841
-  R2             14275 images: acc 0.6958, macro-F1 0.6953, bal. acc 0.7255, precision 0.8815, recall 0.5585
-  R3              3760 images: acc 0.7859, macro-F1 0.7796, bal. acc 0.7952, precision 1.0000, recall 0.5903
-  R4              3230 images: acc 0.6446, macro-F1 0.6264, bal. acc 0.6685, precision 0.8966, recall 0.3905
-  S1               225 images: acc 0.8000, macro-F1 0.7969, bal. acc 0.7958, precision 0.7704, recall 0.8814
-  S2               399 images: acc 0.6416, macro-F1 0.4678, bal. acc 0.5446, precision 1.0000, recall 0.0892
-  S3              1633 images: acc 0.4152, macro-F1 0.4009, bal. acc 0.5694, precision 0.9025, recall 0.1860
-  ALT_WILDFIRE    2691 images: acc 0.7941, macro-F1 0.7656, bal. acc 0.7538, precision 0.8413, recall 0.5760
-  speed: 2.853 ms/image in batches of 32, 7.71 ms for one image; training 2.1 min
-Results in /content/drive/MyDrive/thesis_results_tf/within_R1_resnet50_frozen_seed42
+  R1               625 images: acc 0.9808, macro-F1 0.9808, bal. acc 0.9808, precision 0.9809, recall 0.9809
+  R2             14275 images: acc 0.7056, macro-F1 0.7055, bal. acc 0.7315, precision 0.8726, recall 0.5856
+  R3              3760 images: acc 0.7910, macro-F1 0.7853, bal. acc 0.7999, precision 0.9966, recall 0.6020
+  R4              3230 images: acc 0.6551, macro-F1 0.6394, bal. acc 0.6781, precision 0.8990, recall 0.4111
+  S1               225 images: acc 0.7733, macro-F1 0.7659, bal. acc 0.7665, precision 0.7279, recall 0.9068
+  S2               399 images: acc 0.6541, macro-F1 0.4970, bal. acc 0.5605, precision 1.0000, recall 0.1210
+  S3              1633 images: acc 0.6479, macro-F1 0.6443, bal. acc 0.7248, precision 0.9371, recall 0.5336
+  ALT_WILDFIRE    2691 images: acc 0.7874, macro-F1 0.7653, bal. acc 0.7567, precision 0.7840, recall 0.6212
+  speed: 2.611 ms/image in batches of 32, 8.395 ms for one image; training 2.3 min
+Results in /content/results_tf/within_R1_resnet50_frozen_seed42

@@ -5,7 +5,8 @@ resnet50_scores.csv with every finished ResNet-50 run (pieces 1 and 2),
 one row per (run, test dataset).
 
 Usage:
-    python 04_experiments/src/run_piece2.py --data UPLOAD_FOLDER [--out results_tf] [--quick]
+    python 04_experiments/src/run_piece2.py --data UPLOAD_FOLDER [--out results_tf]
+        [--datasets R4 R3 R2] [--quick]
 """
 
 import argparse
@@ -34,14 +35,16 @@ def read_options():
     parser.add_argument("--out", default="results_tf", help="folder for the run folders and resnet50_scores.csv")
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--quick", action="store_true", help="check only: tiny runs (train_tf.py --quick)")
+    parser.add_argument("--datasets", nargs="+", choices=DATASETS, default=DATASETS,
+                        help="only these training datasets (default: R4 R3 R2)")
     return parser.parse_args()
 
 
-def make_run_list():
+def make_run_list(datasets):
     """Each run is (dataset, frozen yes/no)."""
     runs = []
     for frozen in (True, False):
-        for dataset in DATASETS:
+        for dataset in datasets:
             runs.append((dataset, frozen))
     return runs
 
@@ -105,7 +108,7 @@ def write_scores(options):
 
 def main():
     options = read_options()
-    runs = make_run_list()
+    runs = make_run_list(options.datasets)
     Path(options.out).mkdir(parents=True, exist_ok=True)
     log_file = open(Path(options.out) / "run_log.txt", "a", encoding="utf-8")
 
@@ -115,7 +118,7 @@ def main():
         log_file.write(line + "\n")
         log_file.flush()
 
-    log(f"Piece 2: ResNet-50 on {', '.join(DATASETS)}, frozen and fine-tuned ({len(runs)} runs)")
+    log(f"Piece 2: ResNet-50 on {', '.join(options.datasets)}, frozen and fine-tuned ({len(runs)} runs)")
     run_all(runs, options, log)
     path, n = write_scores(options)
     log(f"Wrote {path} ({n} rows)")

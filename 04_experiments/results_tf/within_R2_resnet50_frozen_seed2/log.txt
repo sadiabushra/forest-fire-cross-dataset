@@ -1,0 +1,6 @@
+Run within_R2_resnet50_frozen_seed2 on GPU (Tesla T4), TensorFlow 2.21.0, Keras 3.13.2
+  train: 66614 images, 39233 fire_or_smoke, 27381 none
+  val: 14275 images, 8407 fire_or_smoke, 5868 none
+  test sets: R2 14275, R1 625, R3 3760, R4 3230, S1 38, S2 399, S3 1633, ALT_WILDFIRE 2692
+  model resnet50: 23,591,810 weights, 4,098 of them learn
+  epoch 1/10: loss 0.1065, val acc 0.9701, val macro-F1 0.9690, 4.7 min

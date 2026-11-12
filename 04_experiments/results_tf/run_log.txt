@@ -20,3 +20,17 @@
 2026-11-11 18:18  [2/2] within_R2_resnet50_finetuned_seed42: started
 2026-11-11 19:10  [2/2] within_R2_resnet50_finetuned_seed42: finished after 53 min
 2026-11-11 19:10  Wrote /content/results_tf/resnet50_scores.csv (64 rows)
+2026-11-12 15:51  Piece 2S: ResNet-50 on R1, R4, R3, seeds 1, frozen and fine-tuned (6 runs)
+2026-11-12 15:51  [1/6] within_R1_resnet50_frozen_seed1: started
+2026-11-12 15:57  [1/6] within_R1_resnet50_frozen_seed1: finished after 6 min
+2026-11-12 15:57  [2/6] within_R4_resnet50_frozen_seed1: started
+2026-11-12 16:09  [2/6] within_R4_resnet50_frozen_seed1: finished after 12 min
+2026-11-12 16:09  [3/6] within_R3_resnet50_frozen_seed1: started
+2026-11-12 16:24  [3/6] within_R3_resnet50_frozen_seed1: finished after 15 min
+2026-11-12 16:24  [4/6] within_R1_resnet50_finetuned_seed1: started
+2026-11-12 16:32  [4/6] within_R1_resnet50_finetuned_seed1: finished after 8 min
+2026-11-12 16:32  [5/6] within_R4_resnet50_finetuned_seed1: started
+2026-11-12 16:48  [5/6] within_R4_resnet50_finetuned_seed1: finished after 16 min
+2026-11-12 16:48  [6/6] within_R3_resnet50_finetuned_seed1: started
+2026-11-12 17:07  [6/6] within_R3_resnet50_finetuned_seed1: finished after 19 min
+2026-11-12 17:07  Wrote resnet50_scores.csv (112 rows) and resnet50_seed_summary.csv in /content/results_tf

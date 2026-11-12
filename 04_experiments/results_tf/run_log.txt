@@ -78,3 +78,11 @@
 2026-11-12 20:17  [1/2] within_R2_resnet50_frozen_seed1: already done, skipped
 2026-11-12 20:17  [2/2] within_R2_resnet50_finetuned_seed1: already done, skipped
 2026-11-12 20:17  Wrote resnet50_scores.csv (176 rows) and resnet50_seed_summary.csv in /content/results_tf
+2026-11-12 20:17  Piece 2S: ResNet-50 on R1, R4, R3, seeds 2, frozen and fine-tuned (6 runs)
+2026-11-12 20:17  [1/6] within_R1_resnet50_frozen_seed2: already done, skipped
+2026-11-12 20:17  [2/6] within_R4_resnet50_frozen_seed2: already done, skipped
+2026-11-12 20:17  [3/6] within_R3_resnet50_frozen_seed2: already done, skipped
+2026-11-12 20:17  [4/6] within_R1_resnet50_finetuned_seed2: already done, skipped
+2026-11-12 20:17  [5/6] within_R4_resnet50_finetuned_seed2: already done, skipped
+2026-11-12 20:17  [6/6] within_R3_resnet50_finetuned_seed2: already done, skipped
+2026-11-12 20:17  Wrote resnet50_scores.csv (176 rows) and resnet50_seed_summary.csv in /content/results_tf

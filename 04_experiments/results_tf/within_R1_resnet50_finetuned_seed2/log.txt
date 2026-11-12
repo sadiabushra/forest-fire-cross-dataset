@@ -1,0 +1,27 @@
+Run within_R1_resnet50_finetuned_seed2 on GPU (Tesla T4), TensorFlow 2.21.0, Keras 3.13.2
+  train: 2914 images, 1464 fire_or_smoke, 1450 none
+  val: 625 images, 314 fire_or_smoke, 311 none
+  test sets: R1 625, R2 14275, R3 3760, R4 3230, S1 225, S2 399, S3 1633, ALT_WILDFIRE 2691
+  model resnet50: 23,591,810 weights, 23,538,690 of them learn
+  epoch 1/10: loss 0.1016, val acc 0.9552, val macro-F1 0.9551, 3.7 min
+  epoch 2/10: loss 0.0211, val acc 0.9888, val macro-F1 0.9888, 0.2 min
+  epoch 3/10: loss 0.0145, val acc 0.9824, val macro-F1 0.9824, 0.2 min
+  epoch 4/10: loss 0.0125, val acc 0.9824, val macro-F1 0.9824, 0.2 min
+  epoch 5/10: loss 0.0110, val acc 0.9744, val macro-F1 0.9744, 0.2 min
+  epoch 6/10: loss 0.0126, val acc 0.9680, val macro-F1 0.9680, 0.2 min
+  epoch 7/10: loss 0.0180, val acc 0.9840, val macro-F1 0.9840, 0.2 min
+  epoch 8/10: loss 0.0209, val acc 0.9840, val macro-F1 0.9840, 0.2 min
+  epoch 9/10: loss 0.0102, val acc 0.9840, val macro-F1 0.9840, 0.2 min
+  epoch 10/10: loss 0.0178, val acc 0.9856, val macro-F1 0.9856, 0.2 min
+  best epoch 2 (val macro-F1 0.9888); testing it
+TEST (first line = own test set, the others = cross-dataset):
+  R1               625 images: acc 0.9792, macro-F1 0.9792, bal. acc 0.9791, precision 0.9631, recall 0.9968
+  R2             14275 images: acc 0.6616, macro-F1 0.6501, bal. acc 0.6499, precision 0.7115, recall 0.7155
+  R3              3760 images: acc 0.7811, macro-F1 0.7772, bal. acc 0.7887, precision 0.9406, recall 0.6204
+  R4              3230 images: acc 0.6105, macro-F1 0.6102, bal. acc 0.6176, precision 0.6792, recall 0.5359
+  S1               225 images: acc 0.7333, macro-F1 0.7038, bal. acc 0.7196, precision 0.6629, recall 1.0000
+  S2               399 images: acc 0.6566, macro-F1 0.5105, bal. acc 0.5659, precision 0.9167, recall 0.1401
+  S3              1633 images: acc 0.5548, macro-F1 0.5545, bal. acc 0.6755, precision 0.9729, recall 0.3755
+  ALT_WILDFIRE    2691 images: acc 0.8019, macro-F1 0.7897, bal. acc 0.7879, precision 0.7527, recall 0.7260
+  speed: 2.594 ms/image in batches of 32, 8.039 ms for one image; training 5.4 min
+Results in /content/results_tf/within_R1_resnet50_finetuned_seed2

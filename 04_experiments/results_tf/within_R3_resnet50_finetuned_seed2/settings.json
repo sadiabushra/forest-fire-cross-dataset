@@ -1,0 +1,33 @@
+{
+  "data": "/content/upload",
+  "dataset": "R3",
+  "model": "resnet50",
+  "freeze": false,
+  "epochs": 10,
+  "batch_size": 64,
+  "lr": 0.0001,
+  "image_size": 224,
+  "seed": 2,
+  "out": "/content/results_tf",
+  "no_save": false,
+  "no_mixed_precision": false,
+  "quick": false,
+  "device": "GPU (Tesla T4)",
+  "mixed_precision": true,
+  "tensorflow": "2.21.0",
+  "keras": "3.13.2",
+  "images": {
+    "train": 17542,
+    "val": 3760
+  },
+  "test_images": {
+    "R3": 3760,
+    "R1": 625,
+    "R2": 14275,
+    "R4": 3230,
+    "S1": 226,
+    "S2": 399,
+    "S3": 1633,
+    "ALT_WILDFIRE": 2698
+  }
+}

@@ -130,3 +130,9 @@
 2026-11-13 02:03  [6/6] within_R3_mobilenet_v2_finetuned_seed42: started
 2026-11-13 02:15  [6/6] within_R3_mobilenet_v2_finetuned_seed42: finished after 13 min
 2026-11-13 02:15  Wrote /content/results_tf/mobilenet_v2_scores.csv (48 rows)
+2026-11-13 02:15  Piece 3: MobileNet-V2 on R2, frozen and fine-tuned (2 runs)
+2026-11-13 02:15  [1/2] within_R2_mobilenet_v2_frozen_seed42: started
+2026-11-13 02:40  [1/2] within_R2_mobilenet_v2_frozen_seed42: finished after 24 min
+2026-11-13 02:40  [2/2] within_R2_mobilenet_v2_finetuned_seed42: started
+2026-11-13 03:09  [2/2] within_R2_mobilenet_v2_finetuned_seed42: finished after 29 min
+2026-11-13 03:09  Wrote /content/results_tf/mobilenet_v2_scores.csv (64 rows)

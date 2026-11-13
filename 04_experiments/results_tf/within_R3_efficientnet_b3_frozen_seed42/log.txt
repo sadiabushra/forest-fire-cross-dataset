@@ -1,0 +1,27 @@
+Run within_R3_efficientnet_b3_frozen_seed42 on GPU (Tesla T4), TensorFlow 2.21.0, Keras 3.13.2
+  train: 17542 images, 9167 fire_or_smoke, 8375 none
+  val: 3760 images, 1965 fire_or_smoke, 1795 none
+  test sets: R3 3760, R1 625, R2 14275, R4 3230, S1 226, S2 399, S3 1633, ALT_WILDFIRE 2698
+  model efficientnet_b3: 10,786,609 weights, 3,074 of them learn
+  epoch 1/10: loss 0.3785, val acc 0.8612, val macro-F1 0.8600, 3.1 min
+  epoch 2/10: loss 0.3428, val acc 0.8646, val macro-F1 0.8639, 0.9 min
+  epoch 3/10: loss 0.3285, val acc 0.8399, val macro-F1 0.8392, 0.5 min
+  epoch 4/10: loss 0.3199, val acc 0.8556, val macro-F1 0.8546, 0.8 min
+  epoch 5/10: loss 0.3134, val acc 0.8543, val macro-F1 0.8533, 0.5 min
+  epoch 6/10: loss 0.3115, val acc 0.8415, val macro-F1 0.8409, 0.6 min
+  epoch 7/10: loss 0.3037, val acc 0.8441, val macro-F1 0.8435, 0.8 min
+  epoch 8/10: loss 0.2999, val acc 0.8301, val macro-F1 0.8298, 0.5 min
+  epoch 9/10: loss 0.2978, val acc 0.8194, val macro-F1 0.8192, 0.5 min
+  epoch 10/10: loss 0.2982, val acc 0.8306, val macro-F1 0.8304, 0.6 min
+  best epoch 2 (val macro-F1 0.8639); testing it
+TEST (first line = own test set, the others = cross-dataset):
+  R3              3760 images: acc 0.8024, macro-F1 0.8021, bal. acc 0.8059, precision 0.8721, recall 0.7288
+  R1               625 images: acc 0.6720, macro-F1 0.6346, bal. acc 0.6705, precision 0.6067, recall 0.9873
+  R2             14275 images: acc 0.6965, macro-F1 0.6582, bal. acc 0.6577, precision 0.6913, recall 0.8755
+  R4              3230 images: acc 0.6204, macro-F1 0.5471, bal. acc 0.5902, precision 0.5951, recall 0.9418
+  S1               226 images: acc 0.7566, macro-F1 0.7361, bal. acc 0.7439, precision 0.6882, recall 0.9832
+  S2               399 images: acc 0.6015, macro-F1 0.6011, bal. acc 0.6234, precision 0.4957, recall 0.7261
+  S3              1633 images: acc 0.6908, macro-F1 0.4085, bal. acc 0.4926, precision 0.6980, recall 0.9852
+  ALT_WILDFIRE    2698 images: acc 0.5441, macro-F1 0.5311, bal. acc 0.6132, precision 0.4558, recall 0.9186
+  speed: 3.663 ms/image in batches of 32, 14.65 ms for one image; training 8.9 min
+Results in /content/results_tf/within_R3_efficientnet_b3_frozen_seed42

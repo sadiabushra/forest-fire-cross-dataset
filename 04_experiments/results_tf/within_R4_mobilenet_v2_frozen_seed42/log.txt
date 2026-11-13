@@ -1,0 +1,27 @@
+Run within_R4_mobilenet_v2_frozen_seed42 on GPU (Tesla T4), TensorFlow 2.21.0, Keras 3.13.2
+  train: 15067 images, 8181 fire_or_smoke, 6886 none
+  val: 3230 images, 1754 fire_or_smoke, 1476 none
+  test sets: R4 3230, R1 625, R2 14275, R3 3760, S1 226, S2 385, S3 1633, ALT_WILDFIRE 2696
+  model mobilenet_v2: 2,260,546 weights, 2,562 of them learn
+  epoch 1/10: loss 0.4669, val acc 0.7477, val macro-F1 0.7466, 1.3 min
+  epoch 2/10: loss 0.3760, val acc 0.7548, val macro-F1 0.7532, 0.5 min
+  epoch 3/10: loss 0.3515, val acc 0.7576, val macro-F1 0.7567, 0.4 min
+  epoch 4/10: loss 0.3332, val acc 0.7594, val macro-F1 0.7585, 0.5 min
+  epoch 5/10: loss 0.3215, val acc 0.7638, val macro-F1 0.7616, 0.5 min
+  epoch 6/10: loss 0.3130, val acc 0.7625, val macro-F1 0.7611, 0.5 min
+  epoch 7/10: loss 0.3094, val acc 0.7604, val macro-F1 0.7602, 0.5 min
+  epoch 8/10: loss 0.3005, val acc 0.7635, val macro-F1 0.7628, 0.6 min
+  epoch 9/10: loss 0.2965, val acc 0.7632, val macro-F1 0.7630, 0.5 min
+  epoch 10/10: loss 0.2957, val acc 0.7635, val macro-F1 0.7633, 0.5 min
+  best epoch 10 (val macro-F1 0.7633); testing it
+TEST (first line = own test set, the others = cross-dataset):
+  R4              3230 images: acc 0.8121, macro-F1 0.8050, bal. acc 0.8016, precision 0.7740, recall 0.9236
+  R1               625 images: acc 0.7552, macro-F1 0.7441, bal. acc 0.7542, precision 0.6825, recall 0.9586
+  R2             14275 images: acc 0.6703, macro-F1 0.6126, bal. acc 0.6213, precision 0.6626, recall 0.8969
+  R3              3760 images: acc 0.6229, macro-F1 0.5850, bal. acc 0.6105, precision 0.5933, recall 0.8850
+  S1               226 images: acc 0.7522, macro-F1 0.7291, bal. acc 0.7388, precision 0.6821, recall 0.9916
+  S2               385 images: acc 0.5169, macro-F1 0.5169, bal. acc 0.5556, precision 0.4122, recall 0.7063
+  S3              1633 images: acc 0.6485, macro-F1 0.4031, bal. acc 0.4660, precision 0.6860, recall 0.9197
+  ALT_WILDFIRE    2696 images: acc 0.6187, macro-F1 0.6182, bal. acc 0.6604, precision 0.5043, recall 0.8447
+  speed: 1.503 ms/image in batches of 32, 6.231 ms for one image; training 5.6 min
+Results in /content/results_tf/within_R4_mobilenet_v2_frozen_seed42

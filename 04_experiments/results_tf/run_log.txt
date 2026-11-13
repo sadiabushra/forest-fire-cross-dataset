@@ -116,3 +116,17 @@
 2026-11-12 23:22  [1/2] within_R2_resnet50_frozen_seed2: already done, skipped
 2026-11-12 23:22  [2/2] within_R2_resnet50_finetuned_seed2: already done, skipped
 2026-11-12 23:22  Wrote resnet50_scores.csv (192 rows) and resnet50_seed_summary.csv in /content/results_tf
+2026-11-13 01:22  Piece 3: MobileNet-V2 on R1, R4, R3, frozen and fine-tuned (6 runs)
+2026-11-13 01:22  [1/6] within_R1_mobilenet_v2_frozen_seed42: started
+2026-11-13 01:26  [1/6] within_R1_mobilenet_v2_frozen_seed42: finished after 4 min
+2026-11-13 01:26  [2/6] within_R4_mobilenet_v2_frozen_seed42: started
+2026-11-13 01:34  [2/6] within_R4_mobilenet_v2_frozen_seed42: finished after 8 min
+2026-11-13 01:34  [3/6] within_R3_mobilenet_v2_frozen_seed42: started
+2026-11-13 01:44  [3/6] within_R3_mobilenet_v2_frozen_seed42: finished after 10 min
+2026-11-13 01:44  [4/6] within_R1_mobilenet_v2_finetuned_seed42: started
+2026-11-13 01:51  [4/6] within_R1_mobilenet_v2_finetuned_seed42: finished after 7 min
+2026-11-13 01:51  [5/6] within_R4_mobilenet_v2_finetuned_seed42: started
+2026-11-13 02:03  [5/6] within_R4_mobilenet_v2_finetuned_seed42: finished after 12 min
+2026-11-13 02:03  [6/6] within_R3_mobilenet_v2_finetuned_seed42: started
+2026-11-13 02:15  [6/6] within_R3_mobilenet_v2_finetuned_seed42: finished after 13 min
+2026-11-13 02:15  Wrote /content/results_tf/mobilenet_v2_scores.csv (48 rows)

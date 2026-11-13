@@ -1,4 +1,4 @@
-"""Step 5 (Keras + TensorFlow): train one fire/no-fire classifier and test it on every dataset.
+"""(Keras + TensorFlow): train one fire/no-fire classifier and test it on every dataset.
 
 Fine-tunes an ImageNet-pretrained model (ResNet-50, MobileNetV2, EfficientNet-B3,
 DenseNet-121 or ViT-B/16; frozen or full) on one training dataset (R1-R4), keeps

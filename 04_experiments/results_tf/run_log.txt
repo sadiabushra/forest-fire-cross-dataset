@@ -156,3 +156,13 @@
 2026-11-13 16:41  [2/2] within_R2_efficientnet_b3_finetuned_seed42: started
 2026-11-13 17:42  [2/2] within_R2_efficientnet_b3_finetuned_seed42: finished after 61 min
 2026-11-13 17:42  Wrote /content/results_tf/efficientnet_b3_scores.csv (64 rows)
+2026-11-14 03:33  Piece 5: ViT-B/16 on R1, R4, frozen and fine-tuned (4 runs)
+2026-11-14 03:33  [1/4] within_R1_vit_b16_frozen_seed42: started
+2026-11-14 03:39  [1/4] within_R1_vit_b16_frozen_seed42: finished after 6 min
+2026-11-14 03:39  [2/4] within_R4_vit_b16_frozen_seed42: started
+2026-11-14 03:55  [2/4] within_R4_vit_b16_frozen_seed42: finished after 16 min
+2026-11-14 03:55  [3/4] within_R1_vit_b16_finetuned_seed42: started
+2026-11-14 04:07  [3/4] within_R1_vit_b16_finetuned_seed42: finished after 12 min
+2026-11-14 04:07  [4/4] within_R4_vit_b16_finetuned_seed42: started
+2026-11-14 04:43  [4/4] within_R4_vit_b16_finetuned_seed42: finished after 36 min
+2026-11-14 04:43  Wrote /content/results_tf/vit_b16_scores.csv (32 rows)

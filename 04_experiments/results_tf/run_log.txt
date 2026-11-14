@@ -172,3 +172,9 @@
 2026-11-14 05:37  [2/2] within_R2_vit_b16_finetuned_seed42: started
 2026-11-14 07:57  [2/2] within_R2_vit_b16_finetuned_seed42: finished after 140 min
 2026-11-14 07:57  Wrote /content/results_tf/vit_b16_scores.csv (48 rows)
+2026-11-14 23:33  Piece 5: ViT-B/16 on R1, R4, frozen and fine-tuned (4 runs)
+2026-11-14 23:33  [1/4] within_R1_vit_b16_frozen_seed42: already done, skipped
+2026-11-14 23:33  [2/4] within_R4_vit_b16_frozen_seed42: already done, skipped
+2026-11-14 23:33  [3/4] within_R1_vit_b16_finetuned_seed42: already done, skipped
+2026-11-14 23:33  [4/4] within_R4_vit_b16_finetuned_seed42: already done, skipped
+2026-11-14 23:33  Wrote /content/results_tf/vit_b16_scores.csv (48 rows)

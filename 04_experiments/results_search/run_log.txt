@@ -1,0 +1,18 @@
+2026-11-15 22:50  Search grid: mobilenet_v2 fine-tuned on R4 (8 runs)
+2026-11-15 22:50  [1/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs32: started
+2026-11-15 22:50  [1/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs32: FAILED (exit code 2) after 0 min
+2026-11-15 22:50  [2/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs64: started
+2026-11-15 22:50  [2/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 22:50  [3/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs32: started
+2026-11-15 22:50  [3/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs32: FAILED (exit code 2) after 0 min
+2026-11-15 22:50  [4/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs64: started
+2026-11-15 22:50  [4/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 22:50  [5/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs32: started
+2026-11-15 22:50  [5/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs32: FAILED (exit code 2) after 0 min
+2026-11-15 22:50  [6/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs64: started
+2026-11-15 22:51  [6/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 22:51  [7/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs32: started
+2026-11-15 22:51  [7/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs32: FAILED (exit code 2) after 0 min
+2026-11-15 22:51  [8/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64: started
+2026-11-15 22:51  [8/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 22:51  No finished runs to collect.

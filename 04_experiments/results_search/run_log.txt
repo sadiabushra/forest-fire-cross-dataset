@@ -34,3 +34,23 @@
 2026-11-15 22:52  [8/8] within_R4_mobilenet_v2_finetuned_seed42_rand08_lr1.7e-04_bs64: started
 2026-11-15 22:52  [8/8] within_R4_mobilenet_v2_finetuned_seed42_rand08_lr1.7e-04_bs64: FAILED (exit code 2) after 0 min
 2026-11-15 22:52  No finished runs to collect.
+2026-11-15 22:52  Search augment: mobilenet_v2 fine-tuned on R1, R4, R3 (9 runs)
+2026-11-15 22:52  [1/9] within_R1_mobilenet_v2_finetuned_seed42_aug-none: started
+2026-11-15 22:52  [1/9] within_R1_mobilenet_v2_finetuned_seed42_aug-none: FAILED (exit code 2) after 0 min
+2026-11-15 22:52  [2/9] within_R1_mobilenet_v2_finetuned_seed42_aug-standard: started
+2026-11-15 22:52  [2/9] within_R1_mobilenet_v2_finetuned_seed42_aug-standard: FAILED (exit code 2) after 0 min
+2026-11-15 22:52  [3/9] within_R1_mobilenet_v2_finetuned_seed42_aug-strong: started
+2026-11-15 22:52  [3/9] within_R1_mobilenet_v2_finetuned_seed42_aug-strong: FAILED (exit code 2) after 0 min
+2026-11-15 22:52  [4/9] within_R4_mobilenet_v2_finetuned_seed42_aug-none: started
+2026-11-15 22:52  [4/9] within_R4_mobilenet_v2_finetuned_seed42_aug-none: FAILED (exit code 2) after 0 min
+2026-11-15 22:52  [5/9] within_R4_mobilenet_v2_finetuned_seed42_aug-standard: started
+2026-11-15 22:53  [5/9] within_R4_mobilenet_v2_finetuned_seed42_aug-standard: FAILED (exit code 2) after 0 min
+2026-11-15 22:53  [6/9] within_R4_mobilenet_v2_finetuned_seed42_aug-strong: started
+2026-11-15 22:53  [6/9] within_R4_mobilenet_v2_finetuned_seed42_aug-strong: FAILED (exit code 2) after 0 min
+2026-11-15 22:53  [7/9] within_R3_mobilenet_v2_finetuned_seed42_aug-none: started
+2026-11-15 22:53  [7/9] within_R3_mobilenet_v2_finetuned_seed42_aug-none: FAILED (exit code 2) after 0 min
+2026-11-15 22:53  [8/9] within_R3_mobilenet_v2_finetuned_seed42_aug-standard: started
+2026-11-15 22:53  [8/9] within_R3_mobilenet_v2_finetuned_seed42_aug-standard: FAILED (exit code 2) after 0 min
+2026-11-15 22:53  [9/9] within_R3_mobilenet_v2_finetuned_seed42_aug-strong: started
+2026-11-15 22:53  [9/9] within_R3_mobilenet_v2_finetuned_seed42_aug-strong: FAILED (exit code 2) after 0 min
+2026-11-15 22:53  No finished runs to collect.

@@ -54,3 +54,21 @@
 2026-11-15 22:53  [9/9] within_R3_mobilenet_v2_finetuned_seed42_aug-strong: started
 2026-11-15 22:53  [9/9] within_R3_mobilenet_v2_finetuned_seed42_aug-strong: FAILED (exit code 2) after 0 min
 2026-11-15 22:53  No finished runs to collect.
+2026-11-15 23:08  Search grid: mobilenet_v2 fine-tuned on R4 (8 runs)
+2026-11-15 23:08  [1/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs32: started
+2026-11-15 23:08  [1/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs32: FAILED (exit code 2) after 0 min
+2026-11-15 23:08  [2/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs64: started
+2026-11-15 23:08  [2/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 23:08  [3/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs32: started
+2026-11-15 23:09  [3/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs32: FAILED (exit code 2) after 0 min
+2026-11-15 23:09  [4/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs64: started
+2026-11-15 23:09  [4/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 23:09  [5/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs32: started
+2026-11-15 23:09  [5/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs32: FAILED (exit code 2) after 0 min
+2026-11-15 23:09  [6/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs64: started
+2026-11-15 23:09  [6/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 23:09  [7/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs32: started
+2026-11-15 23:09  [7/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs32: FAILED (exit code 2) after 0 min
+2026-11-15 23:09  [8/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64: started
+2026-11-15 23:09  [8/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 23:09  No finished runs to collect.

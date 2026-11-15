@@ -16,3 +16,21 @@
 2026-11-15 22:51  [8/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64: started
 2026-11-15 22:51  [8/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64: FAILED (exit code 2) after 0 min
 2026-11-15 22:51  No finished runs to collect.
+2026-11-15 22:51  Search random: mobilenet_v2 fine-tuned on R4 (8 runs)
+2026-11-15 22:51  [1/8] within_R4_mobilenet_v2_finetuned_seed42_rand01_lr4.9e-04_bs64: started
+2026-11-15 22:51  [1/8] within_R4_mobilenet_v2_finetuned_seed42_rand01_lr4.9e-04_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 22:51  [2/8] within_R4_mobilenet_v2_finetuned_seed42_rand02_lr1.2e-05_bs64: started
+2026-11-15 22:51  [2/8] within_R4_mobilenet_v2_finetuned_seed42_rand02_lr1.2e-05_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 22:51  [3/8] within_R4_mobilenet_v2_finetuned_seed42_rand03_lr6.5e-05_bs64: started
+2026-11-15 22:51  [3/8] within_R4_mobilenet_v2_finetuned_seed42_rand03_lr6.5e-05_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 22:51  [4/8] within_R4_mobilenet_v2_finetuned_seed42_rand04_lr8.6e-04_bs64: started
+2026-11-15 22:51  [4/8] within_R4_mobilenet_v2_finetuned_seed42_rand04_lr8.6e-04_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 22:51  [5/8] within_R4_mobilenet_v2_finetuned_seed42_rand05_lr1.5e-04_bs32: started
+2026-11-15 22:51  [5/8] within_R4_mobilenet_v2_finetuned_seed42_rand05_lr1.5e-04_bs32: FAILED (exit code 2) after 0 min
+2026-11-15 22:51  [6/8] within_R4_mobilenet_v2_finetuned_seed42_rand06_lr1.0e-04_bs64: started
+2026-11-15 22:52  [6/8] within_R4_mobilenet_v2_finetuned_seed42_rand06_lr1.0e-04_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 22:52  [7/8] within_R4_mobilenet_v2_finetuned_seed42_rand07_lr1.9e-05_bs32: started
+2026-11-15 22:52  [7/8] within_R4_mobilenet_v2_finetuned_seed42_rand07_lr1.9e-05_bs32: FAILED (exit code 2) after 0 min
+2026-11-15 22:52  [8/8] within_R4_mobilenet_v2_finetuned_seed42_rand08_lr1.7e-04_bs64: started
+2026-11-15 22:52  [8/8] within_R4_mobilenet_v2_finetuned_seed42_rand08_lr1.7e-04_bs64: FAILED (exit code 2) after 0 min
+2026-11-15 22:52  No finished runs to collect.

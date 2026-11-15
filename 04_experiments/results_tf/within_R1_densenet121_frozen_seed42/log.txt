@@ -1,0 +1,27 @@
+Run within_R1_densenet121_frozen_seed42 on GPU (Tesla T4), TensorFlow 2.21.0, Keras 3.13.2
+  train: 2914 images, 1464 fire_or_smoke, 1450 none
+  val: 625 images, 314 fire_or_smoke, 311 none
+  test sets: R1 625, R2 14275, R3 3760, R4 3230, S1 225, S2 399, S3 1633, ALT_WILDFIRE 2691
+  model densenet121: 7,039,554 weights, 2,050 of them learn
+  epoch 1/10: loss 0.4496, val acc 0.9520, val macro-F1 0.9520, 2.3 min
+  epoch 2/10: loss 0.1742, val acc 0.9696, val macro-F1 0.9696, 0.1 min
+  epoch 3/10: loss 0.1331, val acc 0.9760, val macro-F1 0.9760, 0.2 min
+  epoch 4/10: loss 0.1158, val acc 0.9744, val macro-F1 0.9744, 0.1 min
+  epoch 5/10: loss 0.1059, val acc 0.9760, val macro-F1 0.9760, 0.2 min
+  epoch 6/10: loss 0.0977, val acc 0.9792, val macro-F1 0.9792, 0.2 min
+  epoch 7/10: loss 0.0898, val acc 0.9776, val macro-F1 0.9776, 0.1 min
+  epoch 8/10: loss 0.0857, val acc 0.9808, val macro-F1 0.9808, 0.2 min
+  epoch 9/10: loss 0.0780, val acc 0.9808, val macro-F1 0.9808, 0.2 min
+  epoch 10/10: loss 0.0782, val acc 0.9792, val macro-F1 0.9792, 0.1 min
+  best epoch 8 (val macro-F1 0.9808); testing it
+TEST (first line = own test set, the others = cross-dataset):
+  R1               625 images: acc 0.9680, macro-F1 0.9680, bal. acc 0.9680, precision 0.9623, recall 0.9745
+  R2             14275 images: acc 0.7360, macro-F1 0.7360, bal. acc 0.7582, precision 0.8857, recall 0.6335
+  R3              3760 images: acc 0.7782, macro-F1 0.7711, bal. acc 0.7878, precision 0.9991, recall 0.5761
+  R4              3230 images: acc 0.6372, macro-F1 0.6298, bal. acc 0.6541, precision 0.7847, recall 0.4572
+  S1               225 images: acc 0.7333, macro-F1 0.7074, bal. acc 0.7205, precision 0.6667, recall 0.9831
+  S2               399 images: acc 0.6466, macro-F1 0.4840, bal. acc 0.5521, precision 0.9444, recall 0.1083
+  S3              1633 images: acc 0.5175, macro-F1 0.5144, bal. acc 0.6553, precision 0.9972, recall 0.3127
+  ALT_WILDFIRE    2691 images: acc 0.7655, macro-F1 0.7501, bal. acc 0.7477, precision 0.7080, recall 0.6692
+  speed: 3.322 ms/image in batches of 32, 16.819 ms for one image; training 3.6 min
+Results in /content/results_tf/within_R1_densenet121_frozen_seed42

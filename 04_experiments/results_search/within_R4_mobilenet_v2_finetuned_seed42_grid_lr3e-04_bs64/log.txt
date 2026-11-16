@@ -1,0 +1,27 @@
+Run within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs64 on GPU (NVIDIA L4), TensorFlow 2.21.0, Keras 3.13.2
+  train: 15067 images, 8181 fire_or_smoke, 6886 none
+  val: 3230 images, 1754 fire_or_smoke, 1476 none
+  test sets: R4 3230, R1 625, R2 14275, R3 3760, S1 226, S2 385, S3 1633, ALT_WILDFIRE 2696
+  model mobilenet_v2: 2,260,546 weights, 2,226,434 of them learn
+  epoch 1/10: loss 0.2747, val acc 0.6728, val macro-F1 0.6236, 3.3 min
+  epoch 2/10: loss 0.1491, val acc 0.7455, val macro-F1 0.7264, 0.3 min
+  epoch 3/10: loss 0.1070, val acc 0.8192, val macro-F1 0.8192, 0.3 min
+  epoch 4/10: loss 0.0972, val acc 0.7297, val macro-F1 0.7036, 0.3 min
+  epoch 5/10: loss 0.0885, val acc 0.8393, val macro-F1 0.8392, 0.3 min
+  epoch 6/10: loss 0.0688, val acc 0.8368, val macro-F1 0.8368, 0.3 min
+  epoch 7/10: loss 0.0701, val acc 0.8015, val macro-F1 0.8015, 0.3 min
+  epoch 8/10: loss 0.0601, val acc 0.7690, val macro-F1 0.7643, 0.3 min
+  epoch 9/10: loss 0.0589, val acc 0.7848, val macro-F1 0.7819, 0.3 min
+  epoch 10/10: loss 0.0611, val acc 0.8161, val macro-F1 0.8158, 0.3 min
+  best epoch 5 (val macro-F1 0.8392); testing it
+TEST (first line = own test set, the others = cross-dataset):
+  R4              3230 images: acc 0.9226, macro-F1 0.9210, bal. acc 0.9173, precision 0.8896, recall 0.9789
+  R1               625 images: acc 0.7184, macro-F1 0.6944, bal. acc 0.7171, precision 0.6420, recall 0.9936
+  R2             14275 images: acc 0.7664, macro-F1 0.7339, bal. acc 0.7272, precision 0.7335, recall 0.9478
+  R3              3760 images: acc 0.7021, macro-F1 0.6850, bal. acc 0.6930, precision 0.6582, recall 0.8947
+  S1               226 images: acc 0.8407, macro-F1 0.8344, bal. acc 0.8327, precision 0.7748, recall 0.9832
+  S2               385 images: acc 0.4571, macro-F1 0.4313, bal. acc 0.5482, precision 0.3981, recall 0.9021
+  S3              1633 images: acc 0.7024, macro-F1 0.4165, bal. acc 0.5020, precision 0.7020, recall 1.0000
+  ALT_WILDFIRE    2696 images: acc 0.5857, macro-F1 0.5771, bal. acc 0.6512, precision 0.4818, recall 0.9406
+  speed: 0.866 ms/image in batches of 32, 6.497 ms for one image; training 5.7 min
+Results in /content/results_search/within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs64

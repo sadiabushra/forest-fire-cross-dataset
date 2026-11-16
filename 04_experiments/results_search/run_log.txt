@@ -110,3 +110,22 @@
 2026-11-15 23:11  [9/9] within_R3_mobilenet_v2_finetuned_seed42_aug-strong: started
 2026-11-15 23:11  [9/9] within_R3_mobilenet_v2_finetuned_seed42_aug-strong: FAILED (exit code 2) after 0 min
 2026-11-15 23:11  No finished runs to collect.
+2026-11-15 23:25  Search grid: mobilenet_v2 fine-tuned on R4 (8 runs)
+2026-11-15 23:25  [1/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs32: started
+2026-11-15 23:32  [1/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs32: finished after 7 min
+2026-11-15 23:32  [2/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs64: started
+2026-11-15 23:38  [2/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs64: finished after 7 min
+2026-11-15 23:38  [3/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs32: started
+2026-11-15 23:45  [3/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs32: finished after 7 min
+2026-11-15 23:45  [4/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs64: started
+2026-11-15 23:52  [4/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs64: finished after 7 min
+2026-11-15 23:52  [5/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs32: started
+2026-11-15 23:59  [5/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs32: finished after 7 min
+2026-11-15 23:59  [6/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs64: started
+2026-11-16 00:06  [6/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs64: finished after 7 min
+2026-11-16 00:06  [7/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs32: started
+2026-11-16 00:12  [7/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs32: finished after 7 min
+2026-11-16 00:12  [8/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64: started
+2026-11-16 00:19  [8/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64: finished after 7 min
+2026-11-16 00:19  Wrote search_scores.csv (8 runs) and search_best.csv
+2026-11-16 00:19    best grid     mobilenet_v2 finetuned R4: lr 1.0e-04, batch 32, augment standard -> val 0.8677, test 0.9117, cross 0.7761

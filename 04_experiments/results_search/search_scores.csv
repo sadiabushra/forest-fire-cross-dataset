@@ -1,0 +1,9 @@
+run,search,model,mode,train_dataset,lr,batch_size,augment,best_epoch,val_macro_f1,test_macro_f1,cross_macro_f1,cross_auc,train_minutes
+within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs32,grid,mobilenet_v2,finetuned,R4,0.001,32,standard,9,0.7863,0.8462,0.6511,0.7953,5.76
+within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs64,grid,mobilenet_v2,finetuned,R4,0.001,64,standard,10,0.7484,0.7343,0.6761,0.7798,5.69
+within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs32,grid,mobilenet_v2,finetuned,R4,0.0001,32,standard,8,0.8677,0.9117,0.7761,0.86,5.77
+within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs64,grid,mobilenet_v2,finetuned,R4,0.0001,64,standard,7,0.839,0.8713,0.7685,0.8615,5.74
+within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs32,grid,mobilenet_v2,finetuned,R4,0.0003,32,standard,2,0.8437,0.8282,0.6424,0.8128,5.74
+within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs64,grid,mobilenet_v2,finetuned,R4,0.0003,64,standard,5,0.8392,0.921,0.6247,0.8711,5.69
+within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs32,grid,mobilenet_v2,finetuned,R4,3e-05,32,standard,9,0.8447,0.8059,0.7123,0.8403,5.71
+within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64,grid,mobilenet_v2,finetuned,R4,3e-05,64,standard,10,0.8365,0.8492,0.7286,0.8337,5.71

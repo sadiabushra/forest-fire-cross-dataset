@@ -1,0 +1,2 @@
+run,search,model,mode,train_dataset,lr,batch_size,augment,best_epoch,val_macro_f1,test_macro_f1,cross_macro_f1,cross_auc,train_minutes
+within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs32,grid,mobilenet_v2,finetuned,R4,0.0001,32,standard,8,0.8677,0.9117,0.7761,0.86,5.77

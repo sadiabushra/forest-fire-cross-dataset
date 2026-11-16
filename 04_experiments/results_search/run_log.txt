@@ -239,3 +239,33 @@
 2026-11-16 15:14    best grid     vit_b16 finetuned R4: lr 3.0e-05, batch 32, augment standard -> val 0.8880, test 0.9872, cross 0.7914
 2026-11-16 15:14    best random   mobilenet_v2 finetuned R4: lr 1.5e-04, batch 32, augment standard -> val 0.8563, test 0.8014, cross 0.6713
 2026-11-16 15:14    best random   vit_b16 finetuned R4: lr 1.9e-05, batch 32, augment standard -> val 0.8851, test 0.9847, cross 0.7442
+2026-11-16 15:14  Search augment: vit_b16 fine-tuned on R1, R4, R3 (9 runs)
+2026-11-16 15:14  [1/9] within_R1_vit_b16_finetuned_seed42_aug-none: started
+2026-11-16 15:22  [1/9] within_R1_vit_b16_finetuned_seed42_aug-none: finished after 8 min
+2026-11-16 15:22  [2/9] within_R1_vit_b16_finetuned_seed42_aug-standard: started
+2026-11-16 15:30  [2/9] within_R1_vit_b16_finetuned_seed42_aug-standard: finished after 8 min
+2026-11-16 15:30  [3/9] within_R1_vit_b16_finetuned_seed42_aug-strong: started
+2026-11-16 15:37  [3/9] within_R1_vit_b16_finetuned_seed42_aug-strong: finished after 8 min
+2026-11-16 15:37  [4/9] within_R4_vit_b16_finetuned_seed42_aug-none: started
+2026-11-16 15:57  [4/9] within_R4_vit_b16_finetuned_seed42_aug-none: finished after 20 min
+2026-11-16 15:57  [5/9] within_R4_vit_b16_finetuned_seed42_aug-standard: started
+2026-11-16 16:17  [5/9] within_R4_vit_b16_finetuned_seed42_aug-standard: finished after 20 min
+2026-11-16 16:17  [6/9] within_R4_vit_b16_finetuned_seed42_aug-strong: started
+2026-11-16 16:37  [6/9] within_R4_vit_b16_finetuned_seed42_aug-strong: finished after 20 min
+2026-11-16 16:37  [7/9] within_R3_vit_b16_finetuned_seed42_aug-none: started
+2026-11-16 16:59  [7/9] within_R3_vit_b16_finetuned_seed42_aug-none: finished after 22 min
+2026-11-16 16:59  [8/9] within_R3_vit_b16_finetuned_seed42_aug-standard: started
+2026-11-16 17:21  [8/9] within_R3_vit_b16_finetuned_seed42_aug-standard: finished after 22 min
+2026-11-16 17:21  [9/9] within_R3_vit_b16_finetuned_seed42_aug-strong: started
+2026-11-16 17:43  [9/9] within_R3_vit_b16_finetuned_seed42_aug-strong: finished after 22 min
+2026-11-16 17:43  Wrote search_scores.csv (50 runs) and search_best.csv
+2026-11-16 17:43    best augment  mobilenet_v2 finetuned R1: lr 1.0e-04, batch 64, augment standard -> val 0.9824, test 0.9776, cross 0.6870
+2026-11-16 17:43    best augment  mobilenet_v2 finetuned R3: lr 1.0e-04, batch 64, augment standard -> val 0.9422, test 0.9016, cross 0.5952
+2026-11-16 17:43    best augment  mobilenet_v2 finetuned R4: lr 1.0e-04, batch 64, augment strong -> val 0.8498, test 0.8681, cross 0.7194
+2026-11-16 17:43    best augment  vit_b16 finetuned R1: lr 3.0e-05, batch 64, augment standard -> val 0.9920, test 0.9936, cross 0.6912
+2026-11-16 17:43    best augment  vit_b16 finetuned R3: lr 3.0e-05, batch 64, augment none -> val 0.9306, test 0.8965, cross 0.7277
+2026-11-16 17:43    best augment  vit_b16 finetuned R4: lr 3.0e-05, batch 64, augment standard -> val 0.8808, test 0.9753, cross 0.7240
+2026-11-16 17:43    best grid     mobilenet_v2 finetuned R4: lr 1.0e-04, batch 32, augment standard -> val 0.8677, test 0.9117, cross 0.7761
+2026-11-16 17:43    best grid     vit_b16 finetuned R4: lr 3.0e-05, batch 32, augment standard -> val 0.8880, test 0.9872, cross 0.7914
+2026-11-16 17:43    best random   mobilenet_v2 finetuned R4: lr 1.5e-04, batch 32, augment standard -> val 0.8563, test 0.8014, cross 0.6713
+2026-11-16 17:43    best random   vit_b16 finetuned R4: lr 1.9e-05, batch 32, augment standard -> val 0.8851, test 0.9847, cross 0.7442

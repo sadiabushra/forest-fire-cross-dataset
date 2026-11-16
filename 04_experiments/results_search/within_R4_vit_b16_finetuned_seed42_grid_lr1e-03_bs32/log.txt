@@ -1,0 +1,27 @@
+Run within_R4_vit_b16_finetuned_seed42_grid_lr1e-03_bs32 on GPU (Tesla T4), TensorFlow 2.21.0, Keras 3.13.2
+  train: 15067 images, 8181 fire_or_smoke, 6886 none
+  val: 3230 images, 1754 fire_or_smoke, 1476 none
+  test sets: R4 3230, R1 625, R2 14275, R3 3760, S1 226, S2 385, S3 1633, ALT_WILDFIRE 2696
+  model vit_b16: 85,800,194 weights, 85,800,194 of them learn
+  epoch 1/10: loss 0.6462, val acc 0.6269, val macro-F1 0.6195, 4.9 min
+  epoch 2/10: loss 0.5658, val acc 0.6489, val macro-F1 0.6460, 3.2 min
+  epoch 3/10: loss 0.5422, val acc 0.6548, val macro-F1 0.6456, 3.2 min
+  epoch 4/10: loss 0.5200, val acc 0.6489, val macro-F1 0.6294, 3.2 min
+  epoch 5/10: loss 0.4989, val acc 0.6440, val macro-F1 0.6206, 3.2 min
+  epoch 6/10: loss 0.5022, val acc 0.6632, val macro-F1 0.6629, 3.2 min
+  epoch 7/10: loss 0.4895, val acc 0.6356, val macro-F1 0.6321, 3.2 min
+  epoch 8/10: loss 0.4683, val acc 0.6901, val macro-F1 0.6787, 3.2 min
+  epoch 9/10: loss 0.4650, val acc 0.6765, val macro-F1 0.6705, 3.2 min
+  epoch 10/10: loss 0.4472, val acc 0.6368, val macro-F1 0.6166, 3.2 min
+  best epoch 8 (val macro-F1 0.6787); testing it
+TEST (first line = own test set, the others = cross-dataset):
+  R4              3230 images: acc 0.7963, macro-F1 0.7925, bal. acc 0.7905, precision 0.7866, recall 0.8575
+  R1               625 images: acc 0.8128, macro-F1 0.8097, bal. acc 0.8122, precision 0.7519, recall 0.9363
+  R2             14275 images: acc 0.5168, macro-F1 0.4596, bal. acc 0.4739, precision 0.5718, recall 0.7150
+  R3              3760 images: acc 0.6239, macro-F1 0.6019, bal. acc 0.6146, precision 0.6028, recall 0.8219
+  S1               226 images: acc 0.6283, macro-F1 0.5583, bal. acc 0.6089, precision 0.5888, recall 0.9748
+  S2               385 images: acc 0.4338, macro-F1 0.4333, bal. acc 0.4723, precision 0.3518, recall 0.6224
+  S3              1633 images: acc 0.7648, macro-F1 0.7009, bal. acc 0.6906, precision 0.8061, recall 0.8751
+  ALT_WILDFIRE    2696 images: acc 0.6651, macro-F1 0.6620, bal. acc 0.6782, precision 0.5501, recall 0.7363
+  speed: 6.585 ms/image in batches of 32, 8.875 ms for one image; training 33.5 min
+Results in /content/results_search/within_R4_vit_b16_finetuned_seed42_grid_lr1e-03_bs32

@@ -24,3 +24,11 @@ within_R4_mobilenet_v2_finetuned_seed42_rand05_lr1.5e-04_bs32,random,mobilenet_v
 within_R4_mobilenet_v2_finetuned_seed42_rand06_lr1.0e-04_bs64,random,mobilenet_v2,finetuned,R4,0.00010218183831256779,64,standard,10,0.8455,0.734,0.7024,0.8823,5.78
 within_R4_mobilenet_v2_finetuned_seed42_rand07_lr1.9e-05_bs32,random,mobilenet_v2,finetuned,R4,1.9032312936983374e-05,32,standard,10,0.8433,0.8213,0.6949,0.8125,5.84
 within_R4_mobilenet_v2_finetuned_seed42_rand08_lr1.7e-04_bs64,random,mobilenet_v2,finetuned,R4,0.00017247970207590166,64,standard,4,0.8262,0.8151,0.8091,0.8976,5.8
+within_R4_vit_b16_finetuned_seed42_grid_lr1e-03_bs32,grid,vit_b16,finetuned,R4,0.001,32,standard,8,0.6787,0.7925,0.6037,0.6915,33.45
+within_R4_vit_b16_finetuned_seed42_grid_lr1e-03_bs64,grid,vit_b16,finetuned,R4,0.001,64,standard,9,0.7419,0.8068,0.6436,0.7319,30.86
+within_R4_vit_b16_finetuned_seed42_grid_lr1e-04_bs32,grid,vit_b16,finetuned,R4,0.0001,32,standard,5,0.8697,0.9747,0.7899,0.8979,33.92
+within_R4_vit_b16_finetuned_seed42_grid_lr1e-04_bs64,grid,vit_b16,finetuned,R4,0.0001,64,standard,1,0.8718,0.9738,0.7056,0.8552,31.4
+within_R4_vit_b16_finetuned_seed42_grid_lr3e-04_bs32,grid,vit_b16,finetuned,R4,0.0003,32,standard,4,0.8451,0.9454,0.7364,0.8496,33.67
+within_R4_vit_b16_finetuned_seed42_grid_lr3e-04_bs64,grid,vit_b16,finetuned,R4,0.0003,64,standard,4,0.8594,0.9451,0.7126,0.8272,30.79
+within_R4_vit_b16_finetuned_seed42_grid_lr3e-05_bs32,grid,vit_b16,finetuned,R4,3e-05,32,standard,7,0.888,0.9872,0.7914,0.9092,34.4
+within_R4_vit_b16_finetuned_seed42_grid_lr3e-05_bs64,grid,vit_b16,finetuned,R4,3e-05,64,standard,6,0.8698,0.9823,0.8029,0.8915,31.79

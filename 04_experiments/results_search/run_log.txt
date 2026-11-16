@@ -198,3 +198,19 @@
 2026-11-16 08:20    best grid     mobilenet_v2 finetuned R4: lr 1.0e-04, batch 32, augment standard -> val 0.8677, test 0.9117, cross 0.7761
 2026-11-16 08:20    best grid     vit_b16 finetuned R4: lr 3.0e-05, batch 32, augment standard -> val 0.8880, test 0.9872, cross 0.7914
 2026-11-16 08:20    best random   mobilenet_v2 finetuned R4: lr 1.5e-04, batch 32, augment standard -> val 0.8563, test 0.8014, cross 0.6713
+2026-11-16 12:38  Search grid: vit_b16 fine-tuned on R4 (8 runs)
+2026-11-16 12:38  [1/8] within_R4_vit_b16_finetuned_seed42_grid_lr1e-03_bs32: already done, skipped
+2026-11-16 12:38  [2/8] within_R4_vit_b16_finetuned_seed42_grid_lr1e-03_bs64: already done, skipped
+2026-11-16 12:38  [3/8] within_R4_vit_b16_finetuned_seed42_grid_lr3e-04_bs32: already done, skipped
+2026-11-16 12:38  [4/8] within_R4_vit_b16_finetuned_seed42_grid_lr3e-04_bs64: already done, skipped
+2026-11-16 12:38  [5/8] within_R4_vit_b16_finetuned_seed42_grid_lr1e-04_bs32: already done, skipped
+2026-11-16 12:38  [6/8] within_R4_vit_b16_finetuned_seed42_grid_lr1e-04_bs64: already done, skipped
+2026-11-16 12:38  [7/8] within_R4_vit_b16_finetuned_seed42_grid_lr3e-05_bs32: already done, skipped
+2026-11-16 12:38  [8/8] within_R4_vit_b16_finetuned_seed42_grid_lr3e-05_bs64: already done, skipped
+2026-11-16 12:38  Wrote search_scores.csv (33 runs) and search_best.csv
+2026-11-16 12:38    best augment  mobilenet_v2 finetuned R1: lr 1.0e-04, batch 64, augment standard -> val 0.9824, test 0.9776, cross 0.6870
+2026-11-16 12:38    best augment  mobilenet_v2 finetuned R3: lr 1.0e-04, batch 64, augment standard -> val 0.9422, test 0.9016, cross 0.5952
+2026-11-16 12:38    best augment  mobilenet_v2 finetuned R4: lr 1.0e-04, batch 64, augment strong -> val 0.8498, test 0.8681, cross 0.7194
+2026-11-16 12:38    best grid     mobilenet_v2 finetuned R4: lr 1.0e-04, batch 32, augment standard -> val 0.8677, test 0.9117, cross 0.7761
+2026-11-16 12:38    best grid     vit_b16 finetuned R4: lr 3.0e-05, batch 32, augment standard -> val 0.8880, test 0.9872, cross 0.7914
+2026-11-16 12:38    best random   mobilenet_v2 finetuned R4: lr 1.5e-04, batch 32, augment standard -> val 0.8563, test 0.8014, cross 0.6713

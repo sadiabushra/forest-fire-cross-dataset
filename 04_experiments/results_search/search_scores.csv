@@ -1,4 +1,13 @@
 run,search,model,mode,train_dataset,lr,batch_size,augment,best_epoch,val_macro_f1,test_macro_f1,cross_macro_f1,cross_auc,train_minutes
+within_R1_mobilenet_v2_finetuned_seed42_aug-none,augment,mobilenet_v2,finetuned,R1,0.0001,64,none,7,0.9808,0.9792,0.6658,0.8057,3.69
+within_R1_mobilenet_v2_finetuned_seed42_aug-standard,augment,mobilenet_v2,finetuned,R1,0.0001,64,standard,9,0.9824,0.9776,0.687,0.8272,3.68
+within_R1_mobilenet_v2_finetuned_seed42_aug-strong,augment,mobilenet_v2,finetuned,R1,0.0001,64,strong,2,0.9792,0.9696,0.6722,0.8246,3.74
+within_R3_mobilenet_v2_finetuned_seed42_aug-none,augment,mobilenet_v2,finetuned,R3,0.0001,64,none,9,0.9056,0.8734,0.631,0.7274,6.21
+within_R3_mobilenet_v2_finetuned_seed42_aug-standard,augment,mobilenet_v2,finetuned,R3,0.0001,64,standard,10,0.9422,0.9016,0.5952,0.7202,6.19
+within_R3_mobilenet_v2_finetuned_seed42_aug-strong,augment,mobilenet_v2,finetuned,R3,0.0001,64,strong,7,0.9413,0.8778,0.5287,0.7826,6.33
+within_R4_mobilenet_v2_finetuned_seed42_aug-none,augment,mobilenet_v2,finetuned,R4,0.0001,64,none,7,0.8288,0.7537,0.7001,0.8062,5.8
+within_R4_mobilenet_v2_finetuned_seed42_aug-standard,augment,mobilenet_v2,finetuned,R4,0.0001,64,standard,5,0.8495,0.9213,0.7242,0.8335,5.8
+within_R4_mobilenet_v2_finetuned_seed42_aug-strong,augment,mobilenet_v2,finetuned,R4,0.0001,64,strong,8,0.8498,0.8681,0.7194,0.798,5.94
 within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs32,grid,mobilenet_v2,finetuned,R4,0.001,32,standard,9,0.7863,0.8462,0.6511,0.7953,5.76
 within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-03_bs64,grid,mobilenet_v2,finetuned,R4,0.001,64,standard,10,0.7484,0.7343,0.6761,0.7798,5.69
 within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs32,grid,mobilenet_v2,finetuned,R4,0.0001,32,standard,8,0.8677,0.9117,0.7761,0.86,5.77

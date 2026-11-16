@@ -149,3 +149,28 @@
 2026-11-16 01:15  Wrote search_scores.csv (16 runs) and search_best.csv
 2026-11-16 01:15    best grid     mobilenet_v2 finetuned R4: lr 1.0e-04, batch 32, augment standard -> val 0.8677, test 0.9117, cross 0.7761
 2026-11-16 01:15    best random   mobilenet_v2 finetuned R4: lr 1.5e-04, batch 32, augment standard -> val 0.8563, test 0.8014, cross 0.6713
+2026-11-16 01:15  Search augment: mobilenet_v2 fine-tuned on R1, R4, R3 (9 runs)
+2026-11-16 01:15  [1/9] within_R1_mobilenet_v2_finetuned_seed42_aug-none: started
+2026-11-16 01:19  [1/9] within_R1_mobilenet_v2_finetuned_seed42_aug-none: finished after 5 min
+2026-11-16 01:19  [2/9] within_R1_mobilenet_v2_finetuned_seed42_aug-standard: started
+2026-11-16 01:24  [2/9] within_R1_mobilenet_v2_finetuned_seed42_aug-standard: finished after 5 min
+2026-11-16 01:24  [3/9] within_R1_mobilenet_v2_finetuned_seed42_aug-strong: started
+2026-11-16 01:29  [3/9] within_R1_mobilenet_v2_finetuned_seed42_aug-strong: finished after 5 min
+2026-11-16 01:29  [4/9] within_R4_mobilenet_v2_finetuned_seed42_aug-none: started
+2026-11-16 01:36  [4/9] within_R4_mobilenet_v2_finetuned_seed42_aug-none: finished after 7 min
+2026-11-16 01:36  [5/9] within_R4_mobilenet_v2_finetuned_seed42_aug-standard: started
+2026-11-16 01:43  [5/9] within_R4_mobilenet_v2_finetuned_seed42_aug-standard: finished after 7 min
+2026-11-16 01:43  [6/9] within_R4_mobilenet_v2_finetuned_seed42_aug-strong: started
+2026-11-16 01:50  [6/9] within_R4_mobilenet_v2_finetuned_seed42_aug-strong: finished after 7 min
+2026-11-16 01:50  [7/9] within_R3_mobilenet_v2_finetuned_seed42_aug-none: started
+2026-11-16 01:57  [7/9] within_R3_mobilenet_v2_finetuned_seed42_aug-none: finished after 7 min
+2026-11-16 01:57  [8/9] within_R3_mobilenet_v2_finetuned_seed42_aug-standard: started
+2026-11-16 02:05  [8/9] within_R3_mobilenet_v2_finetuned_seed42_aug-standard: finished after 7 min
+2026-11-16 02:05  [9/9] within_R3_mobilenet_v2_finetuned_seed42_aug-strong: started
+2026-11-16 02:12  [9/9] within_R3_mobilenet_v2_finetuned_seed42_aug-strong: finished after 8 min
+2026-11-16 02:12  Wrote search_scores.csv (25 runs) and search_best.csv
+2026-11-16 02:12    best augment  mobilenet_v2 finetuned R1: lr 1.0e-04, batch 64, augment standard -> val 0.9824, test 0.9776, cross 0.6870
+2026-11-16 02:12    best augment  mobilenet_v2 finetuned R3: lr 1.0e-04, batch 64, augment standard -> val 0.9422, test 0.9016, cross 0.5952
+2026-11-16 02:12    best augment  mobilenet_v2 finetuned R4: lr 1.0e-04, batch 64, augment strong -> val 0.8498, test 0.8681, cross 0.7194
+2026-11-16 02:12    best grid     mobilenet_v2 finetuned R4: lr 1.0e-04, batch 32, augment standard -> val 0.8677, test 0.9117, cross 0.7761
+2026-11-16 02:12    best random   mobilenet_v2 finetuned R4: lr 1.5e-04, batch 32, augment standard -> val 0.8563, test 0.8014, cross 0.6713

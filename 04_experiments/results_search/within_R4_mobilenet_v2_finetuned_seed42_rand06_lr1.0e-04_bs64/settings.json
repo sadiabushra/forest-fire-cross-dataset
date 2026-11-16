@@ -1,0 +1,35 @@
+{
+  "data": "/content/upload",
+  "dataset": "R4",
+  "model": "mobilenet_v2",
+  "freeze": false,
+  "epochs": 10,
+  "batch_size": 64,
+  "lr": 0.00010218183831256779,
+  "image_size": 224,
+  "seed": 42,
+  "augment": "standard",
+  "tag": "_rand06_lr1.0e-04_bs64",
+  "out": "/content/results_search",
+  "no_save": true,
+  "no_mixed_precision": false,
+  "quick": false,
+  "device": "GPU (NVIDIA L4)",
+  "mixed_precision": true,
+  "tensorflow": "2.21.0",
+  "keras": "3.13.2",
+  "images": {
+    "train": 15067,
+    "val": 3230
+  },
+  "test_images": {
+    "R4": 3230,
+    "R1": 625,
+    "R2": 14275,
+    "R3": 3760,
+    "S1": 226,
+    "S2": 385,
+    "S3": 1633,
+    "ALT_WILDFIRE": 2696
+  }
+}

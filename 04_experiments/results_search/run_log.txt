@@ -129,3 +129,23 @@
 2026-11-16 00:19  [8/8] within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64: finished after 7 min
 2026-11-16 00:19  Wrote search_scores.csv (8 runs) and search_best.csv
 2026-11-16 00:19    best grid     mobilenet_v2 finetuned R4: lr 1.0e-04, batch 32, augment standard -> val 0.8677, test 0.9117, cross 0.7761
+2026-11-16 00:19  Search random: mobilenet_v2 fine-tuned on R4 (8 runs)
+2026-11-16 00:19  [1/8] within_R4_mobilenet_v2_finetuned_seed42_rand01_lr4.9e-04_bs64: started
+2026-11-16 00:26  [1/8] within_R4_mobilenet_v2_finetuned_seed42_rand01_lr4.9e-04_bs64: finished after 7 min
+2026-11-16 00:26  [2/8] within_R4_mobilenet_v2_finetuned_seed42_rand02_lr1.2e-05_bs64: started
+2026-11-16 00:33  [2/8] within_R4_mobilenet_v2_finetuned_seed42_rand02_lr1.2e-05_bs64: finished after 7 min
+2026-11-16 00:33  [3/8] within_R4_mobilenet_v2_finetuned_seed42_rand03_lr6.5e-05_bs64: started
+2026-11-16 00:40  [3/8] within_R4_mobilenet_v2_finetuned_seed42_rand03_lr6.5e-05_bs64: finished after 7 min
+2026-11-16 00:40  [4/8] within_R4_mobilenet_v2_finetuned_seed42_rand04_lr8.6e-04_bs64: started
+2026-11-16 00:47  [4/8] within_R4_mobilenet_v2_finetuned_seed42_rand04_lr8.6e-04_bs64: finished after 7 min
+2026-11-16 00:47  [5/8] within_R4_mobilenet_v2_finetuned_seed42_rand05_lr1.5e-04_bs32: started
+2026-11-16 00:54  [5/8] within_R4_mobilenet_v2_finetuned_seed42_rand05_lr1.5e-04_bs32: finished after 7 min
+2026-11-16 00:54  [6/8] within_R4_mobilenet_v2_finetuned_seed42_rand06_lr1.0e-04_bs64: started
+2026-11-16 01:01  [6/8] within_R4_mobilenet_v2_finetuned_seed42_rand06_lr1.0e-04_bs64: finished after 7 min
+2026-11-16 01:01  [7/8] within_R4_mobilenet_v2_finetuned_seed42_rand07_lr1.9e-05_bs32: started
+2026-11-16 01:08  [7/8] within_R4_mobilenet_v2_finetuned_seed42_rand07_lr1.9e-05_bs32: finished after 7 min
+2026-11-16 01:08  [8/8] within_R4_mobilenet_v2_finetuned_seed42_rand08_lr1.7e-04_bs64: started
+2026-11-16 01:15  [8/8] within_R4_mobilenet_v2_finetuned_seed42_rand08_lr1.7e-04_bs64: finished after 7 min
+2026-11-16 01:15  Wrote search_scores.csv (16 runs) and search_best.csv
+2026-11-16 01:15    best grid     mobilenet_v2 finetuned R4: lr 1.0e-04, batch 32, augment standard -> val 0.8677, test 0.9117, cross 0.7761
+2026-11-16 01:15    best random   mobilenet_v2 finetuned R4: lr 1.5e-04, batch 32, augment standard -> val 0.8563, test 0.8014, cross 0.6713

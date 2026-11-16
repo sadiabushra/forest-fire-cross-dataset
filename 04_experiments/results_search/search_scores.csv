@@ -7,3 +7,11 @@ within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs32,grid,mobilenet_v2,fine
 within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-04_bs64,grid,mobilenet_v2,finetuned,R4,0.0003,64,standard,5,0.8392,0.921,0.6247,0.8711,5.69
 within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs32,grid,mobilenet_v2,finetuned,R4,3e-05,32,standard,9,0.8447,0.8059,0.7123,0.8403,5.71
 within_R4_mobilenet_v2_finetuned_seed42_grid_lr3e-05_bs64,grid,mobilenet_v2,finetuned,R4,3e-05,64,standard,10,0.8365,0.8492,0.7286,0.8337,5.71
+within_R4_mobilenet_v2_finetuned_seed42_rand01_lr4.9e-04_bs64,random,mobilenet_v2,finetuned,R4,0.0004884765313390345,64,standard,5,0.7703,0.7401,0.6833,0.7743,5.74
+within_R4_mobilenet_v2_finetuned_seed42_rand02_lr1.2e-05_bs64,random,mobilenet_v2,finetuned,R4,1.2049492518354379e-05,64,standard,10,0.8343,0.8589,0.6906,0.8058,5.73
+within_R4_mobilenet_v2_finetuned_seed42_rand03_lr6.5e-05_bs64,random,mobilenet_v2,finetuned,R4,6.454584264762866e-05,64,standard,9,0.8449,0.8885,0.784,0.8739,5.83
+within_R4_mobilenet_v2_finetuned_seed42_rand04_lr8.6e-04_bs64,random,mobilenet_v2,finetuned,R4,0.0008621840609032199,64,standard,4,0.7519,0.8738,0.7447,0.8221,5.79
+within_R4_mobilenet_v2_finetuned_seed42_rand05_lr1.5e-04_bs32,random,mobilenet_v2,finetuned,R4,0.00014681285318933373,32,standard,8,0.8563,0.8014,0.6713,0.8158,5.82
+within_R4_mobilenet_v2_finetuned_seed42_rand06_lr1.0e-04_bs64,random,mobilenet_v2,finetuned,R4,0.00010218183831256779,64,standard,10,0.8455,0.734,0.7024,0.8823,5.78
+within_R4_mobilenet_v2_finetuned_seed42_rand07_lr1.9e-05_bs32,random,mobilenet_v2,finetuned,R4,1.9032312936983374e-05,32,standard,10,0.8433,0.8213,0.6949,0.8125,5.84
+within_R4_mobilenet_v2_finetuned_seed42_rand08_lr1.7e-04_bs64,random,mobilenet_v2,finetuned,R4,0.00017247970207590166,64,standard,4,0.8262,0.8151,0.8091,0.8976,5.8

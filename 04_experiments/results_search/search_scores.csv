@@ -32,3 +32,11 @@ within_R4_vit_b16_finetuned_seed42_grid_lr3e-04_bs32,grid,vit_b16,finetuned,R4,0
 within_R4_vit_b16_finetuned_seed42_grid_lr3e-04_bs64,grid,vit_b16,finetuned,R4,0.0003,64,standard,4,0.8594,0.9451,0.7126,0.8272,30.79
 within_R4_vit_b16_finetuned_seed42_grid_lr3e-05_bs32,grid,vit_b16,finetuned,R4,3e-05,32,standard,7,0.888,0.9872,0.7914,0.9092,34.4
 within_R4_vit_b16_finetuned_seed42_grid_lr3e-05_bs64,grid,vit_b16,finetuned,R4,3e-05,64,standard,6,0.8698,0.9823,0.8029,0.8915,31.79
+within_R4_vit_b16_finetuned_seed42_rand01_lr4.9e-04_bs64,random,vit_b16,finetuned,R4,0.0004884765313390345,64,standard,7,0.8242,0.9383,0.6831,0.8778,17.06
+within_R4_vit_b16_finetuned_seed42_rand02_lr1.2e-05_bs64,random,vit_b16,finetuned,R4,1.2049492518354379e-05,64,standard,8,0.8802,0.985,0.746,0.8776,17.17
+within_R4_vit_b16_finetuned_seed42_rand03_lr6.5e-05_bs64,random,vit_b16,finetuned,R4,6.454584264762866e-05,64,standard,9,0.8734,0.9706,0.7955,0.922,16.8
+within_R4_vit_b16_finetuned_seed42_rand04_lr8.6e-04_bs64,random,vit_b16,finetuned,R4,0.0008621840609032199,64,standard,8,0.8034,0.9163,0.7099,0.8096,17.33
+within_R4_vit_b16_finetuned_seed42_rand05_lr1.5e-04_bs32,random,vit_b16,finetuned,R4,0.00014681285318933373,32,standard,2,0.8789,0.972,0.8217,0.8993,17.06
+within_R4_vit_b16_finetuned_seed42_rand06_lr1.0e-04_bs64,random,vit_b16,finetuned,R4,0.00010218183831256779,64,standard,9,0.8804,0.9662,0.8121,0.9184,16.97
+within_R4_vit_b16_finetuned_seed42_rand07_lr1.9e-05_bs32,random,vit_b16,finetuned,R4,1.9032312936983374e-05,32,standard,5,0.8851,0.9847,0.7442,0.8814,17.13
+within_R4_vit_b16_finetuned_seed42_rand08_lr1.7e-04_bs64,random,vit_b16,finetuned,R4,0.00017247970207590166,64,standard,6,0.8594,0.9571,0.8055,0.8942,16.99

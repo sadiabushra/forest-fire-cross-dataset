@@ -5,3 +5,4 @@ within_R4_mobilenet_v2_finetuned_seed42_aug-strong,augment,mobilenet_v2,finetune
 within_R4_mobilenet_v2_finetuned_seed42_grid_lr1e-04_bs32,grid,mobilenet_v2,finetuned,R4,0.0001,32,standard,8,0.8677,0.9117,0.7761,0.86,5.77
 within_R4_vit_b16_finetuned_seed42_grid_lr3e-05_bs32,grid,vit_b16,finetuned,R4,3e-05,32,standard,7,0.888,0.9872,0.7914,0.9092,34.4
 within_R4_mobilenet_v2_finetuned_seed42_rand05_lr1.5e-04_bs32,random,mobilenet_v2,finetuned,R4,0.00014681285318933373,32,standard,8,0.8563,0.8014,0.6713,0.8158,5.82
+within_R4_vit_b16_finetuned_seed42_rand07_lr1.9e-05_bs32,random,vit_b16,finetuned,R4,1.9032312936983374e-05,32,standard,5,0.8851,0.9847,0.7442,0.8814,17.13

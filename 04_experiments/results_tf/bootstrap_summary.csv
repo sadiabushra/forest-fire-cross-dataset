@@ -1,0 +1,11 @@
+model,kind,macro_f1,ci_low,ci_high
+resnet50,within,0.9576,0.954,0.961
+mobilenet_v2,within,0.9334,0.9274,0.9385
+efficientnet_b3,within,0.9069,0.9023,0.9117
+densenet121,within,0.9682,0.9648,0.9714
+vit_b16,within,0.9695,0.9666,0.9724
+resnet50,cross,0.6805,0.6737,0.6872
+mobilenet_v2,cross,0.7009,0.694,0.7073
+efficientnet_b3,cross,0.6875,0.6807,0.6939
+densenet121,cross,0.711,0.7037,0.7172
+vit_b16,cross,0.7222,0.7159,0.7277

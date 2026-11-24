@@ -1,0 +1,9 @@
+kind,comparison,difference,ci_low,ci_high,clear
+within,vit_b16 minus resnet50,0.0118,0.0083,0.0155,yes
+within,vit_b16 minus mobilenet_v2,0.0363,0.0316,0.0415,yes
+within,vit_b16 minus efficientnet_b3,0.0626,0.0583,0.0669,yes
+within,vit_b16 minus densenet121,0.0013,-0.0019,0.0044,no
+cross,vit_b16 minus resnet50,0.0418,0.0355,0.0486,yes
+cross,vit_b16 minus mobilenet_v2,0.0214,0.015,0.0276,yes
+cross,vit_b16 minus efficientnet_b3,0.0349,0.0286,0.0412,yes
+cross,vit_b16 minus densenet121,0.0113,0.0046,0.0178,yes

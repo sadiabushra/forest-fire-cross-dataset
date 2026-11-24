@@ -17,15 +17,21 @@ import sys
 import time
 from pathlib import Path
 
+# ---------------------------------------------------------------------------
+# SETTINGS
+# ---------------------------------------------------------------------------
 
 MODEL = "densenet121"
 
+# One seed for the new models; the seed spread was measured on ResNet-50 (piece 2S).
 SEED = 42
 
+# Smallest first, so results arrive early: R1 (3k training images), R4 (15k), R3 (18k), R2 (67k).
 DATASETS = ["R1", "R4", "R3", "R2"]
 
 TRAIN_SCRIPT = Path(__file__).resolve().parent / "train_tf.py"
 
+# Columns of the score table taken from each test result.
 SCORE_COLUMNS = ["images", "fire_images", "accuracy", "balanced_accuracy", "macro_f1", "precision",
                  "recall", "f1", "specificity", "auc",
                  "true_negatives", "false_positives", "false_negatives", "true_positives"]
@@ -60,6 +66,10 @@ def folder_name(dataset, frozen, quick):
     return name
 
 
+# ---------------------------------------------------------------------------
+# 1. The runs
+# ---------------------------------------------------------------------------
+
 def run_all(runs, options, log):
     for number, (dataset, frozen) in enumerate(runs, 1):
         name = folder_name(dataset, frozen, options.quick)
@@ -75,11 +85,17 @@ def run_all(runs, options, log):
             command.append("--quick")
         log(f"[{number}/{len(runs)}] {name}: started")
         start = time.time()
+        # Each run is its own process, so the GPU memory is freed after it,
+        # and one failed run does not stop the others.
         result = subprocess.run(command)
         minutes = (time.time() - start) / 60
         status = "finished" if result.returncode == 0 else f"FAILED (exit code {result.returncode})"
         log(f"[{number}/{len(runs)}] {name}: {status} after {minutes:.0f} min")
 
+
+# ---------------------------------------------------------------------------
+# 2. One table of all DenseNet-121 scores
+# ---------------------------------------------------------------------------
 
 def write_scores(options):
     """One row per (finished DenseNet-121 run, test dataset)."""
@@ -87,8 +103,10 @@ def write_scores(options):
     rows = []
     for metrics_path in sorted(Path(options.out).glob(pattern)):
         run = metrics_path.parent.name
+        # A quick check and a real run never end up in the same table.
         if run.endswith("_QUICK") != options.quick:
             continue
+        # The seed is only in the folder name, e.g. ..._seed42.
         seed = int(re.search(r"_seed(\d+)", run).group(1))
         with open(metrics_path, encoding="utf-8") as f:
             metrics = json.load(f)
@@ -110,6 +128,10 @@ def write_scores(options):
             writer.writerows(rows)
     return path, len(rows)
 
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
 
 def main():
     options = read_options()

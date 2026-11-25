@@ -1,14 +1,15 @@
 """Step 6 (Keras + TensorFlow): train the hybrid CNN + ViT model and test it on every dataset.
 
-MobileNet-V2 branch + ViT-B/16 branch, joined by concatenation (--fusion concat)
-or by one transformer block over both feature sets (--fusion transformer).
+CNN branch (DenseNet-121, or MobileNet-V2 with --cnn) + ViT-B/16 branch, joined by
+concatenation (--fusion concat) or by one transformer block over both feature sets
+(--fusion transformer).
 Optional MixStyle in the early CNN layers (--mixstyle) and copy-paste synthetic
 training images (--synthetic). Uses the data, test sets and scores of train_tf.py
 and writes the same result files.
 
 Usage:
     python 04_experiments/src/train_hybrid_tf.py --data UPLOAD_FOLDER --dataset ID
-        [--fusion concat|transformer] [--mixstyle] [--synthetic FOLDER]
+        [--cnn densenet121|mobilenet_v2] [--fusion concat|transformer] [--mixstyle] [--synthetic FOLDER]
         [--synthetic-share S] [--freeze] [--epochs N] [--batch-size N] [--seed N] [--quick]
 """
 
@@ -27,6 +28,8 @@ import train_tf as base
 
 FUSIONS = ["concat", "transformer"]
 
+CNNS = ["densenet121", "mobilenet_v2"]
+
 IMAGE_SIZE = 224
 
 LR_FROZEN = 1e-3
@@ -37,7 +40,11 @@ DROPOUT = 0.2
 TOKEN_SIZE = 256
 ATTENTION_HEADS = 4
 
-MIXSTYLE_AFTER = ["block_2_add", "block_5_add"]
+MIXSTYLE_AFTER = {"densenet121": ["conv2_block6_concat", "conv3_block12_concat"],
+                  "mobilenet_v2": ["block_2_add", "block_5_add"]}
+
+IMAGENET_MEAN = [0.485, 0.456, 0.406]
+IMAGENET_STD = [0.229, 0.224, 0.225]
 MIXSTYLE_PROBABILITY = 0.5
 MIXSTYLE_ALPHA = 0.1
 
@@ -49,6 +56,7 @@ def read_options():
     parser.add_argument("--data", required=True, help="the unzipped upload folder (has images/ and splits/)")
     parser.add_argument("--dataset", required=True, choices=base.TRAIN_DATASETS, help="the dataset to train on")
     parser.add_argument("--fusion", default="concat", choices=FUSIONS)
+    parser.add_argument("--cnn", default="densenet121", choices=CNNS, help="the CNN branch")
     parser.add_argument("--mixstyle", action="store_true", help="MixStyle in the early CNN layers")
     parser.add_argument("--synthetic", default="", help="folder with synthetic_images.csv and images/")
     parser.add_argument("--synthetic-share", type=float, default=SYNTHETIC_SHARE)
@@ -65,7 +73,7 @@ def read_options():
     parser.add_argument("--quick", action="store_true", help="CPU test: tiny run, 2 epochs")
     options = parser.parse_args()
 
-    options.model = f"hybrid-{options.fusion}"
+    options.model = f"hybrid-{options.cnn}-{options.fusion}"
     options.image_size = IMAGE_SIZE
     if options.quick:
         options.epochs = base.QUICK_EPOCHS
@@ -126,14 +134,20 @@ def make_hybrid(options):
     size = options.image_size
     inputs = keras.Input(shape=(size, size, 3))
 
-    cnn = keras.applications.MobileNetV2(include_top=False, weights="imagenet", input_shape=(size, size, 3))
+    if options.cnn == "densenet121":
+        cnn = keras.applications.DenseNet121(include_top=False, weights="imagenet", input_shape=(size, size, 3))
+        cnn_input = keras.layers.Rescaling(0.5, offset=0.5)(inputs)
+        cnn_input = keras.layers.Normalization(mean=IMAGENET_MEAN, variance=[s ** 2 for s in IMAGENET_STD])(cnn_input)
+    else:
+        cnn = keras.applications.MobileNetV2(include_top=False, weights="imagenet", input_shape=(size, size, 3))
+        cnn_input = inputs
     if options.mixstyle:
-        cnn = insert_mixstyle(cnn, MIXSTYLE_AFTER)
+        cnn = insert_mixstyle(cnn, MIXSTYLE_AFTER[options.cnn])
     cnn.trainable = not options.freeze
     for layer in cnn.layers:
         if isinstance(layer, keras.layers.BatchNormalization):
             layer.trainable = False
-    cnn_map = cnn(inputs)
+    cnn_map = cnn(cnn_input)
 
     import keras_hub
     vit = keras_hub.models.Backbone.from_preset(base.VIT_PRESET)
@@ -271,7 +285,8 @@ def main():
     if not options.no_save:
         model.save_weights(out_folder / "best.weights.h5")
 
-    results = {"train_dataset": options.dataset, "model": options.model, "fusion": options.fusion,
+    results = {"train_dataset": options.dataset, "model": options.model, "cnn": options.cnn,
+               "fusion": options.fusion,
                "mixstyle": options.mixstyle, "synthetic": bool(options.synthetic),
                "mode": "frozen" if options.freeze else "finetuned",
                "best_epoch": best_epoch, "best_val_macro_f1": best_score,

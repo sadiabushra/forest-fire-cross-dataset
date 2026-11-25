@@ -1,0 +1,5 @@
+cnn,double_fault,disagreement,vit_f1,cnn_f1,average_f1,average_minus_vit
+resnet50,0.1476,0.252,0.792,0.727,0.7913,-0.0007
+mobilenet_v2,0.1477,0.2389,0.792,0.7331,0.7675,-0.0245
+efficientnet_b3,0.1494,0.2094,0.792,0.7256,0.7683,-0.0237
+densenet121,0.1388,0.2134,0.792,0.7629,0.7821,-0.0099

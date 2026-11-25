@@ -6,7 +6,8 @@ hybrid_scores.csv and hybrid_seed_summary.csv.
 
 Usage:
     python 04_experiments/src/run_piece8.py --data UPLOAD_FOLDER --variants V [V ...]
-        [--datasets R4 R2] [--seeds 42 1 2] [--synthetic FOLDER] [--out results_tf] [--quick]
+        [--cnn densenet121|mobilenet_v2] [--datasets R4 R2] [--seeds 42 1 2]
+        [--synthetic FOLDER] [--out results_tf] [--quick]
 """
 
 import argparse
@@ -37,6 +38,8 @@ def read_options():
     parser.add_argument("--seeds", nargs="+", type=int, default=[42])
     parser.add_argument("--variants", nargs="+", required=True,
                         help="e.g. concat transformer concat+mixstyle concat+mixstyle+syn")
+    parser.add_argument("--cnn", default="densenet121", choices=["densenet121", "mobilenet_v2"],
+                        help="the CNN branch (default DenseNet-121)")
     parser.add_argument("--synthetic", default="", help="folder with synthetic_images.csv (needed for +syn)")
     parser.add_argument("--batch-size", type=int, default=64)
     parser.add_argument("--quick", action="store_true")
@@ -51,9 +54,9 @@ def parse_variant(variant):
     return parts[0], "mixstyle" in parts, "syn" in parts
 
 
-def folder_name(dataset, fusion, mixstyle, syn, seed, quick):
+def folder_name(dataset, cnn, fusion, mixstyle, syn, seed, quick):
     """Same name as train_hybrid_tf.run_name."""
-    name = f"within_{dataset}_hybrid-{fusion}_finetuned_seed{seed}"
+    name = f"within_{dataset}_hybrid-{cnn}-{fusion}_finetuned_seed{seed}"
     if mixstyle:
         name += "_mixstyle"
     if syn:
@@ -68,7 +71,7 @@ def run_all(options, log):
             for dataset in options.datasets for variant in options.variants]
     for number, (seed, dataset, variant) in enumerate(runs, 1):
         fusion, mixstyle, syn = parse_variant(variant)
-        name = folder_name(dataset, fusion, mixstyle, syn, seed, options.quick)
+        name = folder_name(dataset, options.cnn, fusion, mixstyle, syn, seed, options.quick)
         if (Path(options.out) / name / "test_metrics.json").exists():
             log(f"[{number}/{len(runs)}] {name}: already done, skipped")
             continue
@@ -76,7 +79,7 @@ def run_all(options, log):
             log(f"[{number}/{len(runs)}] {name}: needs --synthetic, skipped")
             continue
         command = [sys.executable, str(TRAIN_SCRIPT), "--data", options.data, "--out", options.out,
-                   "--dataset", dataset, "--fusion", fusion, "--seed", str(seed),
+                   "--dataset", dataset, "--cnn", options.cnn, "--fusion", fusion, "--seed", str(seed),
                    "--batch-size", str(options.batch_size)]
         if mixstyle:
             command.append("--mixstyle")
@@ -101,10 +104,11 @@ def read_scores(options):
         with open(metrics_path, encoding="utf-8") as f:
             metrics = json.load(f)
         seed = int(re.search(r"_seed(\d+)", run).group(1))
-        variant = metrics["fusion"] + ("+mixstyle" if metrics["mixstyle"] else "") + \
+        cnn = metrics.get("cnn", "mobilenet_v2")
+        variant = cnn + "-" + metrics["fusion"] + ("+mixstyle" if metrics["mixstyle"] else "") + \
             ("+syn" if metrics["synthetic"] else "")
         for target, s in metrics["test"].items():
-            row = {"run": run, "variant": variant, "fusion": metrics["fusion"],
+            row = {"run": run, "variant": variant, "cnn": cnn, "fusion": metrics["fusion"],
                    "mixstyle": metrics["mixstyle"], "synthetic": metrics["synthetic"],
                    "mode": metrics["mode"], "seed": seed, "train_dataset": metrics["train_dataset"],
                    "test_dataset": target, "kind": "within" if target == metrics["train_dataset"] else "cross",

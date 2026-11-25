@@ -1,4 +1,4 @@
-"""(Keras + TensorFlow): train one fire/no-fire classifier and test it on every dataset.
+"""Step 5 (Keras + TensorFlow): train one fire/no-fire classifier and test it on every dataset.
 
 Fine-tunes an ImageNet-pretrained model (ResNet-50, MobileNetV2, EfficientNet-B3,
 DenseNet-121 or ViT-B/16; frozen or full) on one training dataset (R1-R4), keeps
@@ -9,7 +9,8 @@ matrices, speed and size, and saves every prediction.
 
 Usage:
     python 04_experiments/src/train_tf.py --data UPLOAD_FOLDER --dataset ID
-        [--model NAME] [--freeze] [--epochs N] [--batch-size N] [--quick]
+        [--model NAME] [--freeze] [--epochs N] [--batch-size N] [--lr LR]
+        [--augment none|standard|strong] [--tag TEXT] [--quick]
 """
 
 import argparse
@@ -45,6 +46,12 @@ LR_FROZEN = 1e-3
 LR_FINETUNED = {"vit_b16": 3e-5}
 LR_FINETUNED_DEFAULT = 1e-4
 
+AUGMENT_LEVELS = ["none", "standard", "strong"]
+ROTATION_DEGREES = 15
+BLUR_PROBABILITY = 0.3
+ERASE_PROBABILITY = 0.3
+ERASE_AREA = (0.02, 0.15)
+
 QUICK_TRAIN, QUICK_VAL, QUICK_TEST = 300, 100, 100
 QUICK_EPOCHS = 2
 QUICK_IMAGE_SIZE = 128
@@ -64,6 +71,9 @@ def read_options():
     parser.add_argument("--lr", type=float, default=None, help="learning rate (default: see LR_ settings)")
     parser.add_argument("--image-size", type=int, default=224)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--augment", default="standard", choices=AUGMENT_LEVELS,
+                        help="training augmentation (default: standard)")
+    parser.add_argument("--tag", default="", help="text added to the run folder name, e.g. _lr3e-04_bs32")
     parser.add_argument("--out", default="results_tf", help="folder where run folders are made")
     parser.add_argument("--no-save", action="store_true", help="do not save best.weights.h5")
     parser.add_argument("--no-mixed-precision", action="store_true",
@@ -169,6 +179,53 @@ def train_view(image, size):
     return tf.clip_by_value(image, 0.0, 255.0)
 
 
+def rotate(image, max_degrees):
+    """Rotate by a random angle in [-max_degrees, max_degrees], borders filled by reflection."""
+    angle = tf.random.uniform([], -max_degrees, max_degrees) * np.pi / 180
+    cos, sin = tf.cos(angle), tf.sin(angle)
+    height = tf.cast(tf.shape(image)[0], tf.float32)
+    width = tf.cast(tf.shape(image)[1], tf.float32)
+    x_offset = ((width - 1) - (cos * (width - 1) - sin * (height - 1))) / 2
+    y_offset = ((height - 1) - (sin * (width - 1) + cos * (height - 1))) / 2
+    transform = tf.stack([cos, -sin, x_offset, sin, cos, y_offset, 0.0, 0.0])[tf.newaxis]
+    rotated = tf.raw_ops.ImageProjectiveTransformV3(
+        images=image[tf.newaxis], transforms=transform, output_shape=tf.shape(image)[:2],
+        fill_value=0.0, interpolation="BILINEAR", fill_mode="REFLECT")
+    return rotated[0]
+
+
+def blur(image):
+    """5 x 5 Gaussian blur (sigma 1)."""
+    x = tf.range(-2, 3, dtype=tf.float32)
+    kernel_1d = tf.exp(-(x ** 2) / 2.0)
+    kernel_1d = kernel_1d / tf.reduce_sum(kernel_1d)
+    kernel = tf.tensordot(kernel_1d, kernel_1d, axes=0)
+    kernel = tf.tile(kernel[:, :, tf.newaxis, tf.newaxis], [1, 1, 3, 1])
+    blurred = tf.nn.depthwise_conv2d(image[tf.newaxis], kernel, strides=[1, 1, 1, 1], padding="SAME")
+    return blurred[0]
+
+
+def erase(image, size):
+    """Random erasing: one rectangle (2-15% of the image) is filled with grey."""
+    area = tf.random.uniform([], ERASE_AREA[0], ERASE_AREA[1]) * size * size
+    ratio = tf.exp(tf.random.uniform([], np.log(0.3), np.log(3.3)))
+    height = tf.clip_by_value(tf.cast(tf.sqrt(area * ratio), tf.int32), 1, size)
+    width = tf.clip_by_value(tf.cast(tf.sqrt(area / ratio), tf.int32), 1, size)
+    top = tf.random.uniform([], 0, size - height + 1, dtype=tf.int32)
+    left = tf.random.uniform([], 0, size - width + 1, dtype=tf.int32)
+    box = tf.pad(tf.ones([height, width, 1]), [[top, size - top - height], [left, size - left - width], [0, 0]])
+    return image * (1 - box) + 127.5 * box
+
+
+def strong_view(image, size):
+    """Standard augmentation plus rotation, sometimes blur and sometimes random erasing."""
+    image = train_view(image, size)
+    image = rotate(image, ROTATION_DEGREES)
+    image = tf.cond(tf.random.uniform([]) < BLUR_PROBABILITY, lambda: blur(image), lambda: image)
+    image = tf.cond(tf.random.uniform([]) < ERASE_PROBABILITY, lambda: erase(image, size), lambda: image)
+    return tf.clip_by_value(image, 0.0, 255.0)
+
+
 def eval_view(image, size):
     """Always the same: shortest side resized to `size`, then the centre square."""
     height = tf.cast(tf.shape(image)[0], tf.float32)
@@ -187,9 +244,16 @@ def make_dataset(rows, options, training):
     scale = scale_for_model(options.model)
     size = options.image_size
 
+    if training and options.augment == "strong":
+        view = strong_view
+    elif training and options.augment == "standard":
+        view = train_view
+    else:
+        view = eval_view
+
     def load(path, label):
         image = load_image(path)
-        image = train_view(image, size) if training else eval_view(image, size)
+        image = view(image, size)
         return scale(image), label
 
     dataset = tf.data.Dataset.from_tensor_slices((paths, labels))
@@ -251,7 +315,7 @@ def predict(model, rows, options):
 
 
 def scores(labels, probs):
-    """All the scores the supervisor asked for."""
+    """Classification scores for one test set."""
     predicted = (probs >= 0.5).astype(int)
     precision, recall, f1, _ = precision_recall_fscore_support(
         labels, predicted, average="binary", pos_label=1, zero_division=0)
@@ -296,14 +360,14 @@ def measure_speed(model, size):
 def run_name(options):
     """Folder name that says what the run was, e.g. within_R1_resnet50_frozen_seed42."""
     mode = "frozen" if options.freeze else "finetuned"
-    name = f"within_{options.dataset}_{options.model}_{mode}_seed{options.seed}"
+    name = f"within_{options.dataset}_{options.model}_{mode}_seed{options.seed}{options.tag}"
     if options.quick:
         name += "_QUICK"
     return name
 
 
 def set_up_gpu(options):
-    """Take GPU memory only when needed (good on a shared server), and use mixed precision."""
+    """Turn on GPU memory growth and mixed precision."""
     gpus = tf.config.list_physical_devices("GPU")
     for gpu in gpus:
         tf.config.experimental.set_memory_growth(gpu, True)

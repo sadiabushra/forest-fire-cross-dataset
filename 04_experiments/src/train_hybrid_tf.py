@@ -88,6 +88,23 @@ def read_options():
     return options
 
 
+BETA_TRIES = 10
+
+
+def beta_sample(batch, alpha):
+    """Beta(alpha, alpha) numbers, shape [batch, 1, 1, 1], made from uniform numbers only.  tf.random.gamma does not run under XLA, which Keras uses on the GPU, so this uses Johnk's method: X = U^(1/alpha), Y = V^(1/alpha); if X + Y <= 1 then X / (X + Y) follows Beta(alpha, alpha)."""
+    u = tf.random.uniform([BETA_TRIES, batch], 1e-7, 1.0)
+    v = tf.random.uniform([BETA_TRIES, batch], 1e-7, 1.0)
+    log_x = tf.math.log(u) / alpha
+    log_y = tf.math.log(v) / alpha
+    kept = tf.reduce_logsumexp(tf.stack([log_x, log_y]), axis=0) <= 0.0
+    value = tf.sigmoid(log_x - log_y)
+    first_kept = tf.argmax(tf.cast(kept, tf.int32), axis=0)
+    lam = tf.gather(tf.transpose(value), first_kept, batch_dims=1)
+    lam = tf.where(tf.reduce_any(kept, axis=0), lam, 0.5)
+    return tf.reshape(lam, [batch, 1, 1, 1])
+
+
 class MixStyle(keras.layers.Layer):
     """Mixes the feature statistics (style) of images in a batch, during training only."""
 
@@ -103,9 +120,7 @@ class MixStyle(keras.layers.Layer):
         mean = tf.stop_gradient(tf.reduce_mean(x, axis=[1, 2], keepdims=True))
         std = tf.stop_gradient(tf.math.reduce_std(x, axis=[1, 2], keepdims=True) + 1e-6)
         normed = (x - mean) / std
-        g1 = tf.random.gamma([batch, 1, 1, 1], self.alpha)
-        g2 = tf.random.gamma([batch, 1, 1, 1], self.alpha)
-        lam = g1 / (g1 + g2 + 1e-8)
+        lam = beta_sample(batch, self.alpha)
         order = tf.random.shuffle(tf.range(batch))
         mixed_mean = lam * mean + (1 - lam) * tf.gather(mean, order)
         mixed_std = lam * std + (1 - lam) * tf.gather(std, order)

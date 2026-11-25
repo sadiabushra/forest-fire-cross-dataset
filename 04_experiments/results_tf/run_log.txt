@@ -248,3 +248,10 @@
 2026-11-25 07:06  [4/4] within_R3_densenet121_finetuned_seed2: finished after 31 min
 2026-11-25 07:06  Wrote vit_b16_scores.csv (112 rows) and vit_b16_seed_summary.csv
 2026-11-25 07:06  Wrote densenet121_scores.csv (112 rows) and densenet121_seed_summary.csv
+2026-11-25 07:06  Piece 7: vit_b16, densenet121 on R2, seeds 1, fine-tuned (2 runs)
+2026-11-25 07:06  [1/2] within_R2_vit_b16_finetuned_seed1: started
+2026-11-25 09:35  [1/2] within_R2_vit_b16_finetuned_seed1: finished after 149 min
+2026-11-25 09:35  [2/2] within_R2_densenet121_finetuned_seed1: started
+2026-11-25 10:45  [2/2] within_R2_densenet121_finetuned_seed1: finished after 70 min
+2026-11-25 10:45  Wrote vit_b16_scores.csv (120 rows) and vit_b16_seed_summary.csv
+2026-11-25 10:45  Wrote densenet121_scores.csv (120 rows) and densenet121_seed_summary.csv

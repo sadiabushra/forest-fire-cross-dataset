@@ -3,6 +3,7 @@
 CNN branch (DenseNet-121, or MobileNet-V2 with --cnn) + ViT-B/16 branch, joined by
 concatenation (--fusion concat) or by one transformer block over both feature sets
 (--fusion transformer).
+Branch dropout switches off one branch for a share of the training images.
 Optional MixStyle in the early CNN layers (--mixstyle) and copy-paste synthetic
 training images (--synthetic). Uses the data, test sets and scores of train_tf.py
 and writes the same result files.
@@ -10,7 +11,8 @@ and writes the same result files.
 Usage:
     python 04_experiments/src/train_hybrid_tf.py --data UPLOAD_FOLDER --dataset ID
         [--cnn densenet121|mobilenet_v2] [--fusion concat|transformer] [--mixstyle] [--synthetic FOLDER]
-        [--synthetic-share S] [--freeze] [--epochs N] [--batch-size N] [--seed N] [--quick]
+        [--synthetic-share S] [--branch-dropout R] [--freeze] [--epochs N] [--batch-size N]
+        [--seed N] [--quick]
 """
 
 import argparse
@@ -33,9 +35,11 @@ CNNS = ["densenet121", "mobilenet_v2"]
 IMAGE_SIZE = 224
 
 LR_FROZEN = 1e-3
-LR_FINETUNED = 3e-5
+LR_FINETUNED = 1e-4
 
 DROPOUT = 0.2
+
+BRANCH_DROPOUT = 0.2
 
 TOKEN_SIZE = 256
 ATTENTION_HEADS = 4
@@ -60,6 +64,8 @@ def read_options():
     parser.add_argument("--mixstyle", action="store_true", help="MixStyle in the early CNN layers")
     parser.add_argument("--synthetic", default="", help="folder with synthetic_images.csv and images/")
     parser.add_argument("--synthetic-share", type=float, default=SYNTHETIC_SHARE)
+    parser.add_argument("--branch-dropout", type=float, default=BRANCH_DROPOUT,
+                        help="share of training images for which one branch is switched off (0 = off)")
     parser.add_argument("--freeze", action="store_true", help="both backbones fixed, only the new layers learn")
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--batch-size", type=int, default=64)
@@ -116,6 +122,31 @@ class MixStyle(keras.layers.Layer):
         return config
 
 
+class BranchDropout(keras.layers.Layer):
+    """During training, switches off one of the two branches for a share of the images."""
+
+    def __init__(self, rate=BRANCH_DROPOUT, **kwargs):
+        super().__init__(**kwargs)
+        self.rate = rate
+
+    def call(self, inputs, training=None):
+        cnn_part, vit_part = inputs
+        if not training or self.rate <= 0:
+            return [cnn_part, vit_part]
+        batch = tf.shape(cnn_part)[0]
+        draw = tf.random.uniform([batch])
+        keep_cnn = tf.cast(draw >= self.rate / 2, cnn_part.dtype)
+        keep_vit = tf.cast((draw < self.rate / 2) | (draw >= self.rate), vit_part.dtype)
+        cnn_shape = tf.concat([[batch], tf.ones([tf.rank(cnn_part) - 1], tf.int32)], axis=0)
+        vit_shape = tf.concat([[batch], tf.ones([tf.rank(vit_part) - 1], tf.int32)], axis=0)
+        return [cnn_part * tf.reshape(keep_cnn, cnn_shape), vit_part * tf.reshape(keep_vit, vit_shape)]
+
+    def get_config(self):
+        config = super().get_config()
+        config.update({"rate": self.rate})
+        return config
+
+
 def insert_mixstyle(cnn, after_layers):
     """Rebuild the CNN with a MixStyle layer after each named layer (same layers, same weights)."""
     new_input = keras.Input(shape=cnn.input.shape[1:])
@@ -157,11 +188,13 @@ def make_hybrid(options):
     if options.fusion == "concat":
         cnn_vector = keras.layers.GlobalAveragePooling2D()(cnn_map)
         vit_vector = vit_tokens[:, 0, :]
+        cnn_vector, vit_vector = BranchDropout(options.branch_dropout)([cnn_vector, vit_vector])
         features = keras.layers.Concatenate()([cnn_vector, vit_vector])
     else:
         cnn_tokens = keras.layers.Reshape((-1, cnn_map.shape[-1]))(cnn_map)
         cnn_tokens = keras.layers.Dense(TOKEN_SIZE)(cnn_tokens)
         vit_projected = keras.layers.Dense(TOKEN_SIZE)(vit_tokens)
+        cnn_tokens, vit_projected = BranchDropout(options.branch_dropout)([cnn_tokens, vit_projected])
         tokens = keras.layers.Concatenate(axis=1)([cnn_tokens, vit_projected])
         x = keras.layers.LayerNormalization()(tokens)
         attention = keras.layers.MultiHeadAttention(ATTENTION_HEADS, TOKEN_SIZE // ATTENTION_HEADS)(x, x)

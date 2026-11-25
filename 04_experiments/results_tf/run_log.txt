@@ -214,3 +214,7 @@
 2026-11-25 00:02  [3/4] within_R1_densenet121_finetuned_seed42: already done, skipped
 2026-11-25 00:02  [4/4] within_R4_densenet121_finetuned_seed42: already done, skipped
 2026-11-25 00:02  Wrote /content/results_tf/densenet121_scores.csv (64 rows)
+2026-11-25 00:02  Piece 6: DenseNet-121 on R3, frozen and fine-tuned (2 runs)
+2026-11-25 00:02  [1/2] within_R3_densenet121_frozen_seed42: already done, skipped
+2026-11-25 00:02  [2/2] within_R3_densenet121_finetuned_seed42: already done, skipped
+2026-11-25 00:02  Wrote /content/results_tf/densenet121_scores.csv (64 rows)

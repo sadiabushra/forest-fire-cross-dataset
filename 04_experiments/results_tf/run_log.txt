@@ -310,3 +310,20 @@
 2026-11-26 17:09  [1/2] within_R4_hybrid-densenet121-concat_finetuned_seed42: already done, skipped
 2026-11-26 17:09  [2/2] within_R4_hybrid-densenet121-transformer_finetuned_seed42: already done, skipped
 2026-11-26 17:09  Wrote hybrid_scores.csv (48 rows) and hybrid_seed_summary.csv
+2026-11-26 17:09  Piece 8: hybrid concat, concat+mixstyle, concat+mixstyle+syn on R4, seeds 42, 1, 2
+2026-11-26 17:09  [1/9] within_R4_hybrid-densenet121-concat_finetuned_seed42: already done, skipped
+2026-11-26 17:09  [2/9] within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle: started
+2026-11-26 17:11  [2/9] within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle: FAILED (exit code 1) after 2 min
+2026-11-26 17:11  [3/9] within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle_syn: started
+2026-11-26 17:14  [3/9] within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle_syn: FAILED (exit code 1) after 3 min
+2026-11-26 17:14  [4/9] within_R4_hybrid-densenet121-concat_finetuned_seed1: already done, skipped
+2026-11-26 17:14  [5/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle: started
+2026-11-26 17:18  [5/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle: FAILED (exit code 1) after 4 min
+2026-11-26 17:18  [6/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle_syn: started
+2026-11-26 17:21  [6/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle_syn: FAILED (exit code 1) after 3 min
+2026-11-26 17:21  [7/9] within_R4_hybrid-densenet121-concat_finetuned_seed2: already done, skipped
+2026-11-26 17:21  [8/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle: started
+2026-11-26 17:24  [8/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle: FAILED (exit code 1) after 3 min
+2026-11-26 17:24  [9/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle_syn: started
+2026-11-26 17:26  [9/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle_syn: FAILED (exit code 1) after 2 min
+2026-11-26 17:26  Wrote hybrid_scores.csv (48 rows) and hybrid_seed_summary.csv

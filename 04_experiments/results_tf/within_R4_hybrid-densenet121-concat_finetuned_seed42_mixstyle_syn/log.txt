@@ -4,3 +4,4 @@ Run within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle_syn on GPU (Te
   val: 3230 images, 1754 fire_or_smoke, 1476 none
   test sets: R4 3230, R1 625, R2 14275, R3 3760, S1 215, S2 385, S3 1633, ALT_WILDFIRE 2695
   model hybrid-densenet121-concat + MixStyle: 92,839,746 weights, 92,672,450 of them learn
+  XLA off for this run (MixStyle)

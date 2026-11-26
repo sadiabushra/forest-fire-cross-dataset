@@ -1,0 +1,27 @@
+Run within_R4_hybrid-densenet121-transformer_finetuned_seed2 on GPU (Tesla T4), TensorFlow 2.21.0, Keras 3.13.2
+  train: 15067 images, 8181 fire_or_smoke, 6886 none
+  val: 3230 images, 1754 fire_or_smoke, 1476 none
+  test sets: R4 3230, R1 625, R2 14275, R3 3760, S1 226, S2 385, S3 1633, ALT_WILDFIRE 2696
+  model hybrid-densenet121-transformer: 93,823,554 weights, 93,656,258 of them learn
+  epoch 1/10: loss 0.2757, val acc 0.8545, val macro-F1 0.8544, 11.5 min
+  epoch 2/10: loss 0.1752, val acc 0.8375, val macro-F1 0.8366, 3.7 min
+  epoch 3/10: loss 0.1499, val acc 0.8529, val macro-F1 0.8519, 3.7 min
+  epoch 4/10: loss 0.1291, val acc 0.8582, val macro-F1 0.8582, 3.6 min
+  epoch 5/10: loss 0.1109, val acc 0.8520, val macro-F1 0.8517, 3.6 min
+  epoch 6/10: loss 0.1068, val acc 0.8390, val macro-F1 0.8388, 3.7 min
+  epoch 7/10: loss 0.1065, val acc 0.8480, val macro-F1 0.8476, 3.6 min
+  epoch 8/10: loss 0.0985, val acc 0.8424, val macro-F1 0.8424, 3.7 min
+  epoch 9/10: loss 0.0965, val acc 0.8560, val macro-F1 0.8555, 3.6 min
+  epoch 10/10: loss 0.0845, val acc 0.8752, val macro-F1 0.8751, 3.7 min
+  best epoch 10 (val macro-F1 0.8751); testing it
+TEST (first line = own test set, the others = cross-dataset):
+  R4              3230 images: acc 0.9635, macro-F1 0.9630, bal. acc 0.9612, precision 0.9470, recall 0.9880
+  R1               625 images: acc 0.9040, macro-F1 0.9030, bal. acc 0.9035, precision 0.8396, recall 1.0000
+  R2             14275 images: acc 0.7885, macro-F1 0.7733, bal. acc 0.7667, precision 0.7817, recall 0.8891
+  R3              3760 images: acc 0.8104, macro-F1 0.8103, bal. acc 0.8114, precision 0.8391, recall 0.7883
+  S1               226 images: acc 0.7434, macro-F1 0.7161, bal. acc 0.7290, precision 0.6723, recall 1.0000
+  S2               385 images: acc 0.5481, macro-F1 0.5478, bal. acc 0.5933, precision 0.4382, recall 0.7692
+  S3              1633 images: acc 0.7324, macro-F1 0.5159, bal. acc 0.5528, precision 0.7241, recall 0.9991
+  ALT_WILDFIRE    2696 images: acc 0.7700, macro-F1 0.7695, bal. acc 0.8003, precision 0.6387, recall 0.9338
+  speed: 10.025 ms/image in batches of 32; training 44.5 min
+Results in /content/results_tf/within_R4_hybrid-densenet121-transformer_finetuned_seed2

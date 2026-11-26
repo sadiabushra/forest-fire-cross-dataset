@@ -287,3 +287,22 @@
 2026-11-26 03:00  [9/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle_syn: started
 2026-11-26 03:02  [9/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle_syn: FAILED (exit code 1) after 2 min
 2026-11-26 03:02  Wrote hybrid_scores.csv (32 rows) and hybrid_seed_summary.csv
+2026-11-26 03:02  Piece 8: hybrid transformer, transformer+mixstyle, transformer+mixstyle+syn on R4, seeds 42, 1, 2
+2026-11-26 03:02  [1/9] within_R4_hybrid-densenet121-transformer_finetuned_seed42: already done, skipped
+2026-11-26 03:02  [2/9] within_R4_hybrid-densenet121-transformer_finetuned_seed42_mixstyle: started
+2026-11-26 03:04  [2/9] within_R4_hybrid-densenet121-transformer_finetuned_seed42_mixstyle: FAILED (exit code 1) after 2 min
+2026-11-26 03:04  [3/9] within_R4_hybrid-densenet121-transformer_finetuned_seed42_mixstyle_syn: started
+2026-11-26 03:06  [3/9] within_R4_hybrid-densenet121-transformer_finetuned_seed42_mixstyle_syn: FAILED (exit code 1) after 2 min
+2026-11-26 03:06  [4/9] within_R4_hybrid-densenet121-transformer_finetuned_seed1: started
+2026-11-26 03:59  [4/9] within_R4_hybrid-densenet121-transformer_finetuned_seed1: finished after 53 min
+2026-11-26 03:59  [5/9] within_R4_hybrid-densenet121-transformer_finetuned_seed1_mixstyle: started
+2026-11-26 04:01  [5/9] within_R4_hybrid-densenet121-transformer_finetuned_seed1_mixstyle: FAILED (exit code 1) after 2 min
+2026-11-26 04:01  [6/9] within_R4_hybrid-densenet121-transformer_finetuned_seed1_mixstyle_syn: started
+2026-11-26 04:02  [6/9] within_R4_hybrid-densenet121-transformer_finetuned_seed1_mixstyle_syn: FAILED (exit code 1) after 2 min
+2026-11-26 04:02  [7/9] within_R4_hybrid-densenet121-transformer_finetuned_seed2: started
+2026-11-26 04:56  [7/9] within_R4_hybrid-densenet121-transformer_finetuned_seed2: finished after 53 min
+2026-11-26 04:56  [8/9] within_R4_hybrid-densenet121-transformer_finetuned_seed2_mixstyle: started
+2026-11-26 04:58  [8/9] within_R4_hybrid-densenet121-transformer_finetuned_seed2_mixstyle: FAILED (exit code 1) after 2 min
+2026-11-26 04:58  [9/9] within_R4_hybrid-densenet121-transformer_finetuned_seed2_mixstyle_syn: started
+2026-11-26 04:59  [9/9] within_R4_hybrid-densenet121-transformer_finetuned_seed2_mixstyle_syn: FAILED (exit code 1) after 2 min
+2026-11-26 04:59  Wrote hybrid_scores.csv (48 rows) and hybrid_seed_summary.csv

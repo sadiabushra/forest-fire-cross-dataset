@@ -262,3 +262,9 @@
 2026-11-25 14:31  [2/2] within_R2_densenet121_finetuned_seed2: finished after 74 min
 2026-11-25 14:31  Wrote vit_b16_scores.csv (128 rows) and vit_b16_seed_summary.csv
 2026-11-25 14:31  Wrote densenet121_scores.csv (128 rows) and densenet121_seed_summary.csv
+2026-11-25 23:28  Piece 8: hybrid concat, transformer on R4, seeds 42
+2026-11-25 23:28  [1/2] within_R4_hybrid-densenet121-concat_finetuned_seed42: started
+2026-11-26 00:17  [1/2] within_R4_hybrid-densenet121-concat_finetuned_seed42: finished after 49 min
+2026-11-26 00:17  [2/2] within_R4_hybrid-densenet121-transformer_finetuned_seed42: started
+2026-11-26 01:09  [2/2] within_R4_hybrid-densenet121-transformer_finetuned_seed42: finished after 51 min
+2026-11-26 01:09  Wrote hybrid_scores.csv (16 rows) and hybrid_seed_summary.csv

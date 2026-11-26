@@ -16,6 +16,7 @@ Usage:
 """
 
 import argparse
+import copy
 import csv
 import random
 import time
@@ -53,6 +54,8 @@ MIXSTYLE_PROBABILITY = 0.5
 MIXSTYLE_ALPHA = 0.1
 
 SYNTHETIC_SHARE = 0.25
+
+MIXSTYLE_ACCUMULATE = 2
 
 
 def read_options():
@@ -299,11 +302,16 @@ def main():
     log(f"  model {options.model}{' + MixStyle' if options.mixstyle else ''}: "
         f"{total_weights:,} weights, {trainable_weights:,} of them learn")
     jit = "auto" if not options.mixstyle else False
+    accumulate = MIXSTYLE_ACCUMULATE if options.mixstyle else 1
     if options.mixstyle:
-        log("  XLA off for this run (MixStyle)")
-    model.compile(optimizer=keras.optimizers.AdamW(learning_rate=options.lr),
-                  loss="sparse_categorical_crossentropy", jit_compile=jit)
-    train_data = base.make_dataset(parts["train"], options, training=True)
+        log(f"  XLA off for this run (MixStyle); batches of {options.batch_size // accumulate}, "
+            f"gradients added over {accumulate} batches (= one update per {options.batch_size} images)")
+    optimizer = keras.optimizers.AdamW(learning_rate=options.lr,
+                                       gradient_accumulation_steps=accumulate if accumulate > 1 else None)
+    model.compile(optimizer=optimizer, loss="sparse_categorical_crossentropy", jit_compile=jit)
+    train_options = copy.copy(options)
+    train_options.batch_size = options.batch_size // accumulate
+    train_data = base.make_dataset(parts["train"], train_options, training=True)
     weights = base.class_weights(parts["train"])
 
     best_score, best_weights, best_epoch = -1.0, None, 0
@@ -340,6 +348,7 @@ def main():
                "fusion": options.fusion,
                "mixstyle": options.mixstyle, "synthetic": bool(options.synthetic),
                "xla": not options.mixstyle,
+               "train_batch": train_options.batch_size, "gradient_accumulation": accumulate,
                "mode": "frozen" if options.freeze else "finetuned",
                "best_epoch": best_epoch, "best_val_macro_f1": best_score,
                "train_minutes": round(train_minutes, 2), "test": {}}

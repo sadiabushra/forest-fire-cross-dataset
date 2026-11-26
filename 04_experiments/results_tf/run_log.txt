@@ -329,3 +329,7 @@
 2026-11-26 17:26  Wrote hybrid_scores.csv (48 rows) and hybrid_seed_summary.csv
 2026-11-26 17:26  Piece 8: hybrid concat, concat+mixstyle, concat+mixstyle+syn on R2, seeds 42, 1, 2
 2026-11-26 17:26  [1/9] within_R2_hybrid-densenet121-concat_finetuned_seed42: started
+2026-11-26 17:36  Piece 8: hybrid concat, transformer on R4, seeds 42
+2026-11-26 17:36  [1/2] within_R4_hybrid-densenet121-concat_finetuned_seed42: already done, skipped
+2026-11-26 17:36  [2/2] within_R4_hybrid-densenet121-transformer_finetuned_seed42: already done, skipped
+2026-11-26 17:36  Wrote hybrid_scores.csv (48 rows) and hybrid_seed_summary.csv

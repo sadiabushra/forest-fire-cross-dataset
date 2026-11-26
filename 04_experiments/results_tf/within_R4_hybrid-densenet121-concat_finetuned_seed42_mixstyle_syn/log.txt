@@ -1,0 +1,6 @@
+Run within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle_syn on GPU (Tesla T4), TensorFlow 2.21.0, Keras 3.13.2
+  synthetic: 3766 images added to training; 12 test images removed (same near-duplicate group as a synthetic image's source)
+  train: 18833 images, 11208 fire_or_smoke, 7625 none
+  val: 3230 images, 1754 fire_or_smoke, 1476 none
+  test sets: R4 3230, R1 625, R2 14275, R3 3760, S1 215, S2 385, S3 1633, ALT_WILDFIRE 2695
+  model hybrid-densenet121-concat + MixStyle: 92,839,746 weights, 92,672,450 of them learn

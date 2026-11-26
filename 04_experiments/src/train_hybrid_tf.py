@@ -298,11 +298,8 @@ def main():
     total_weights, trainable_weights = base.count_weights(model)
     log(f"  model {options.model}{' + MixStyle' if options.mixstyle else ''}: "
         f"{total_weights:,} weights, {trainable_weights:,} of them learn")
-    jit = "auto" if not options.mixstyle else False
-    if options.mixstyle:
-        log("  XLA off for this run (MixStyle)")
     model.compile(optimizer=keras.optimizers.AdamW(learning_rate=options.lr),
-                  loss="sparse_categorical_crossentropy", jit_compile=jit)
+                  loss="sparse_categorical_crossentropy")
     train_data = base.make_dataset(parts["train"], options, training=True)
     weights = base.class_weights(parts["train"])
 
@@ -339,7 +336,6 @@ def main():
     results = {"train_dataset": options.dataset, "model": options.model, "cnn": options.cnn,
                "fusion": options.fusion,
                "mixstyle": options.mixstyle, "synthetic": bool(options.synthetic),
-               "xla": not options.mixstyle,
                "mode": "frozen" if options.freeze else "finetuned",
                "best_epoch": best_epoch, "best_val_macro_f1": best_score,
                "train_minutes": round(train_minutes, 2), "test": {}}

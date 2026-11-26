@@ -268,3 +268,22 @@
 2026-11-26 00:17  [2/2] within_R4_hybrid-densenet121-transformer_finetuned_seed42: started
 2026-11-26 01:09  [2/2] within_R4_hybrid-densenet121-transformer_finetuned_seed42: finished after 51 min
 2026-11-26 01:09  Wrote hybrid_scores.csv (16 rows) and hybrid_seed_summary.csv
+2026-11-26 01:09  Piece 8: hybrid concat, concat+mixstyle, concat+mixstyle+syn on R4, seeds 42, 1, 2
+2026-11-26 01:09  [1/9] within_R4_hybrid-densenet121-concat_finetuned_seed42: already done, skipped
+2026-11-26 01:09  [2/9] within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle: started
+2026-11-26 01:10  [2/9] within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle: FAILED (exit code 1) after 2 min
+2026-11-26 01:10  [3/9] within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle_syn: started
+2026-11-26 01:12  [3/9] within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle_syn: FAILED (exit code 1) after 2 min
+2026-11-26 01:12  [4/9] within_R4_hybrid-densenet121-concat_finetuned_seed1: started
+2026-11-26 02:03  [4/9] within_R4_hybrid-densenet121-concat_finetuned_seed1: finished after 51 min
+2026-11-26 02:03  [5/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle: started
+2026-11-26 02:05  [5/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle: FAILED (exit code 1) after 2 min
+2026-11-26 02:05  [6/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle_syn: started
+2026-11-26 02:07  [6/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle_syn: FAILED (exit code 1) after 2 min
+2026-11-26 02:07  [7/9] within_R4_hybrid-densenet121-concat_finetuned_seed2: started
+2026-11-26 02:58  [7/9] within_R4_hybrid-densenet121-concat_finetuned_seed2: finished after 51 min
+2026-11-26 02:58  [8/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle: started
+2026-11-26 03:00  [8/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle: FAILED (exit code 1) after 2 min
+2026-11-26 03:00  [9/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle_syn: started
+2026-11-26 03:02  [9/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle_syn: FAILED (exit code 1) after 2 min
+2026-11-26 03:02  Wrote hybrid_scores.csv (32 rows) and hybrid_seed_summary.csv

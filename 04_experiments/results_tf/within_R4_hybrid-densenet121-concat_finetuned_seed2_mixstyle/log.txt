@@ -3,4 +3,26 @@ Run within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle on GPU (Tesla T
   val: 3230 images, 1754 fire_or_smoke, 1476 none
   test sets: R4 3230, R1 625, R2 14275, R3 3760, S1 226, S2 385, S3 1633, ALT_WILDFIRE 2696
   model hybrid-densenet121-concat + MixStyle: 92,839,746 weights, 92,672,450 of them learn
-  XLA off for this run (MixStyle)
+  XLA off for this run (MixStyle); batches of 32, gradients added over 2 batches (= one update per 64 images)
+  epoch 1/10: loss 0.2698, val acc 0.8628, val macro-F1 0.8627, 10.3 min
+  epoch 2/10: loss 0.1623, val acc 0.8362, val macro-F1 0.8354, 8.9 min
+  epoch 3/10: loss 0.1403, val acc 0.8721, val macro-F1 0.8721, 8.1 min
+  epoch 4/10: loss 0.1202, val acc 0.8406, val macro-F1 0.8405, 8.3 min
+  epoch 5/10: loss 0.1110, val acc 0.8452, val macro-F1 0.8449, 8.1 min
+  epoch 6/10: loss 0.1005, val acc 0.8375, val macro-F1 0.8370, 8.1 min
+  epoch 7/10: loss 0.0950, val acc 0.8647, val macro-F1 0.8647, 8.0 min
+  epoch 8/10: loss 0.1005, val acc 0.8632, val macro-F1 0.8630, 8.0 min
+  epoch 9/10: loss 0.0958, val acc 0.8632, val macro-F1 0.8631, 8.0 min
+  epoch 10/10: loss 0.0954, val acc 0.8672, val macro-F1 0.8670, 8.2 min
+  best epoch 3 (val macro-F1 0.8721); testing it
+TEST (first line = own test set, the others = cross-dataset):
+  R4              3230 images: acc 0.9752, macro-F1 0.9751, bal. acc 0.9752, precision 0.9783, recall 0.9761
+  R1               625 images: acc 0.9504, macro-F1 0.9503, bal. acc 0.9502, precision 0.9101, recall 1.0000
+  R2             14275 images: acc 0.7992, macro-F1 0.7892, bal. acc 0.7853, precision 0.8086, recall 0.8633
+  R3              3760 images: acc 0.8351, macro-F1 0.8349, bal. acc 0.8352, precision 0.8479, recall 0.8341
+  S1               226 images: acc 0.8142, macro-F1 0.8029, bal. acc 0.8037, precision 0.7391, recall 1.0000
+  S2               385 images: acc 0.7351, macro-F1 0.7234, bal. acc 0.7306, precision 0.6258, recall 0.7133
+  S3              1633 images: acc 0.5248, macro-F1 0.5237, bal. acc 0.6029, precision 0.8254, recall 0.4087
+  ALT_WILDFIRE    2696 images: acc 0.8498, macro-F1 0.8458, bal. acc 0.8573, precision 0.7615, recall 0.8907
+  speed: 9.782 ms/image in batches of 32; training 84.1 min
+Results in /content/results_tf/within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle

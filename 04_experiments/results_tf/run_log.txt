@@ -341,3 +341,18 @@
 2026-11-27 21:22  [1/2] within_R4_hybrid-densenet121-concat_finetuned_seed42: already done, skipped
 2026-11-27 21:22  [2/2] within_R4_hybrid-densenet121-transformer_finetuned_seed42: already done, skipped
 2026-11-27 21:22  Wrote hybrid_scores.csv (64 rows) and hybrid_seed_summary.csv
+2026-11-27 21:22  Piece 8: hybrid concat, concat+mixstyle, concat+mixstyle+syn on R4, seeds 42, 1, 2
+2026-11-27 21:22  [1/9] within_R4_hybrid-densenet121-concat_finetuned_seed42: already done, skipped
+2026-11-27 21:22  [2/9] within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle: already done, skipped
+2026-11-27 21:22  [3/9] within_R4_hybrid-densenet121-concat_finetuned_seed42_mixstyle_syn: already done, skipped
+2026-11-27 21:22  [4/9] within_R4_hybrid-densenet121-concat_finetuned_seed1: already done, skipped
+2026-11-27 21:22  [5/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle: started
+2026-11-27 22:51  [5/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle: finished after 90 min
+2026-11-27 22:51  [6/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle_syn: started
+2026-11-28 00:40  [6/9] within_R4_hybrid-densenet121-concat_finetuned_seed1_mixstyle_syn: finished after 109 min
+2026-11-28 00:40  [7/9] within_R4_hybrid-densenet121-concat_finetuned_seed2: already done, skipped
+2026-11-28 00:40  [8/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle: started
+2026-11-28 02:11  [8/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle: finished after 91 min
+2026-11-28 02:11  [9/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle_syn: started
+2026-11-28 04:00  [9/9] within_R4_hybrid-densenet121-concat_finetuned_seed2_mixstyle_syn: finished after 109 min
+2026-11-28 04:00  Wrote hybrid_scores.csv (96 rows) and hybrid_seed_summary.csv
